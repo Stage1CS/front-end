@@ -11,7 +11,7 @@ function App() {
      <Router>
        <Navbar/>
           <Route path='/' exact component={Home} />
-          <Route path='/sign-in' component={SignIn} />
+          <Route path='/Connexion' component={Connexion} />
      </Router>
     </>
   );
