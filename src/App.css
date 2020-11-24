@@ -7,8 +7,7 @@
   
   .home,
   .services,
-  .products,
-  .sign-in {
+  .products {
     display: flex;
     height: 90vh;
     align-items: center;
@@ -25,10 +24,12 @@
   }
   
    
-  .sign-in {
+  /*.sign-in {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: rgb(247, 127, 47);
     font-size: 100px;
-  }
+  }*/
+
+  
