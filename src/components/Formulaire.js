@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import '../App.css';
+import {Link} from 'react-router-dom';
 
 function Formulaire({Login, error}) {
 
@@ -34,7 +35,9 @@ function Formulaire({Login, error}) {
           <input type="password" name="password" id="password" onChange={e => setDetails({...details,password: e.target.value})} value={details.password}/>     
       </div>
 
-      <input type="submit" value="Se connecter" to='/'/> 
+      <Link to='/Admin' className='nav-links'>
+            <input type="submit" value="Se connecter"/> 
+      </Link>
 
      </div>
 </form>
