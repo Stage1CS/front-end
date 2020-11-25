@@ -28,11 +28,11 @@ function NavbarAdmin() {
         <>
          <nav className="navbar">         
             <div className="navbar-container">
-            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>       
+            <Link to="/Admin" className="navbar-logo" onClick={closeMobileMenu}>       
             <i class="fas fa-truck-loading"></i>
             </Link>
 
-            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>       
+            <Link to="/Admin" className="navbar-logo" onClick={closeMobileMenu}>       
             Go Delivery
             </Link>
 
@@ -42,7 +42,7 @@ function NavbarAdmin() {
 
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                <li className='nav-item'>
-               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+               <Link to='/Admin' className='nav-links' onClick={closeMobileMenu}>
                   Acceuil
                </Link>
                </li>
