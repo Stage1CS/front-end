@@ -79,13 +79,13 @@
   
   .cards__item__info__admin {
     padding: 20px 30px 30px;
-    background-color: #dbeafa;
+    background-color: #eedfd5;
   }
   
   .cards__item__text__admin {
-    color: #252e48;
+    color: #482c25;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 20px;
   }
   
   @media only screen and (min-width: 1200px) {

@@ -17,27 +17,27 @@ function AcceuilAdmin() {
           <ul className='cards__items'>
 
           <CardItemAdmin
-              src='images/satisfaction.jpg'
+              src='images/loupe.jpg'
               text='Effectuer une rechercher'
               path='/Recherche'
             />
              <CardItemAdmin
-              src='images/satisfaction.jpg'
+              src='images/livreur.jpg'
               text='Ajouter un livreur'
               path='/Ajout_Livreur'
             />
             <CardItemAdmin
-              src='images/satisfaction.jpg'
+              src='images/location.jpg'
               text='Ajouter un point de vente'
               path='/Ajout_Magasin'
             /> 
              <CardItemAdmin
-              src='images/satisfaction.jpg'
+              src='images/import.png'
               text='Importer des données'
               path='/Import'
             />   
              <CardItemAdmin
-              src='images/satisfaction.jpg'
+              src='images/flech.PNG'
               text='Exporter des données'
               path='/Export'
             />               
