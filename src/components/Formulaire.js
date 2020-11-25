@@ -37,7 +37,7 @@ function Formulaire({Login, error}) {
 
       <Link to='/Admin' className='nav-links'>
             <input type="submit" value="Se connecter"/> 
-      </Link>
+      </Link>      
 
      </div>
 </form>

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/pages/Home';
 import Connexion from './components/pages/Connexion';
-import Admin from   './components/pages/Admin';
+import Admin from './components/pages/Admin';
 
 
 function App() {

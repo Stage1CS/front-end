@@ -1,11 +1,17 @@
 import React from 'react';
 import '../../App.css';
+import AcceuilAdmin from '../AcceuilAdmin';
+
+
 function Admin() {
-  return (
-    <h1>
-    compte administrateur   
-    </h1>
-  );
+    return (
+        
+                
+        <>
+           <AcceuilAdmin />
+        </>    
+           
+      );
 }
 
 export default Admin;
