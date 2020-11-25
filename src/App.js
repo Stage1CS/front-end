@@ -5,13 +5,14 @@ import './App.css';
 import Home from './components/pages/Home';
 import Connexion from './components/pages/Connexion';
 
+
 function App() {
   return (
     <>
      <Router>
        <Navbar/>
           <Route path='/' exact component={Home} />
-          <Route path='/Connexion' component={Connexion} />
+          <Route path='/Connexion' exact component={Connexion} />
      </Router>
     </>
   );
