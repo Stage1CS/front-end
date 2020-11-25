@@ -7,6 +7,7 @@ import CardItemAdmin from './CardItemAdmin';
 
 function AcceuilAdmin() {
   return (
+
     <div className='hero-container'>
       <video src='/videos/Office.mp4' autoPlay loop muted />
       <h3>Qu'es ce que vous voulez faire ?</h3>
@@ -17,7 +18,7 @@ function AcceuilAdmin() {
 
           <CardItemAdmin
               src='images/satisfaction.jpg'
-              text='Rechercher'
+              text='Effectuer une rechercher'
               path='/Recherche'
             />
              <CardItemAdmin
@@ -32,12 +33,12 @@ function AcceuilAdmin() {
             /> 
              <CardItemAdmin
               src='images/satisfaction.jpg'
-              text='Importer mes données'
+              text='Importer des données'
               path='/Import'
             />   
              <CardItemAdmin
               src='images/satisfaction.jpg'
-              text='Exporter me données'
+              text='Exporter des données'
               path='/Export'
             />               
           </ul>

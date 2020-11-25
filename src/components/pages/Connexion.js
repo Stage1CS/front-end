@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../../App.css';
 import Formulaire from '../Formulaire';
+import Navbar from '../Navbar';
 
 function Connexion() {
     const adminUser = {
@@ -30,17 +31,21 @@ function Connexion() {
     }
 
   return (
+    <>
+    <Navbar/>
     <div className ="Connexion">
         {(user.email != "") ? (
              <div className ="Welcome">
                   <h2>Welcome,  <span>{user.name}</span></h2>  
                   <button onClick={Logout}>Logout</button>
              </div>
-        ) : (
-            <Formulaire Login={Login} error={error}/>
-        )}
+        ) : (   
+             <Formulaire Login={Login} error={error}/>     
+        )
+        }
 
     </div> 
+    </>
   );
 }
 
