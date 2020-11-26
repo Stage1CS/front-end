@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Formulaire({Login, error}) {
 
-    const[details, setDetails] =useState({name:"", email:"", password:""});
+    const[details, setDetails] =useState({email:"", password:""});
 
     const submitHandler = e => {
         e.preventDefault();
@@ -19,11 +19,6 @@ function Formulaire({Login, error}) {
 
       <h2>Connexion</h2> 
       {(error !== "") ? (<div className="error">{error}</div> ): ""}
-
-      <div className='form-group'> 
-          <label htmlFor="name">Nom :</label>
-          <input type="text" name="name" id="name" onChange={e => setDetails({...details,name: e.target.value})} value={details.name}/>     
-      </div>
 
       <div className='form-group'> 
           <label htmlFor="email">Email :</label>

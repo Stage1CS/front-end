@@ -12,8 +12,8 @@ function AcceuilAdmin() {
       <video src='/videos/Office.mp4' autoPlay loop muted />
       <h3>Qu'es ce que vous voulez faire ?</h3>
 
-      <div className='cards__container__admin'>
-        <div className='cards__wrapper__admin'>
+      <div className='cards__container'>
+        <div className='cards__wrapper'>
           <ul className='cards__items'>
 
           <CardItemAdmin
