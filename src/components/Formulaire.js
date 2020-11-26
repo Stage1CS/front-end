@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import '../App.css';
+import './Formulaire.css';
 import {Link} from 'react-router-dom';
 
 function Formulaire({Login, error}) {
@@ -14,7 +15,12 @@ function Formulaire({Login, error}) {
 
   return (
 
+<div className='hero-container__formulaire'>   
+
+<video src='/videos/Office.mp4' autoPlay loop muted />
+
 <form onSubmit={submitHandler}>
+  
     <div className='form-inner'>
 
       <h2>Connexion</h2> 
@@ -36,6 +42,7 @@ function Formulaire({Login, error}) {
 
      </div>
 </form>
+</div>
 
   )
 }

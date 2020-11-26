@@ -6,7 +6,7 @@ video {
     z-index: -1;
   }
   
-  .hero-container__livreur {
+  .hero-container__formulaire {
     /*background-color: rgb(247, 218, 191);*/
     height: 100vh;
     width: 100%;
@@ -17,13 +17,13 @@ video {
     object-fit: contain;
   }
   
-  .hero-container__livreur > h1 {
+  .hero-container__formulaire > h1 {
     color: #fff;
     font-size: 100px;
     margin-top: -100px;
   }
   
-  .hero-container__livreur > p {
+  .hero-container__formulaire > p {
     margin-top: 8px;
     color: #fff;
     font-size: 32px;
@@ -31,41 +31,41 @@ video {
       'Lucida Sans', Arial, sans-serif;
   }
   
-  .hero-btns__livreur {
+  .hero-btns__formulaire {
     margin-top: 32px;
   }
   
-  .hero-btns__livreur .btn {
+  .hero-btns__formulaire .btn {
     margin: 6px;
   }
   
-  .fa-play-circle__livreur {
+  .fa-play-circle__formulaire {
     margin-left: 4px;
   }
   
   @media screen and (max-width: 960px) {
-    .hero-container__livreur > h1 {
+    .hero-container__formulaire > h1 {
       font-size: 70px;
       margin-top: -150px;
     }
   }
   
   @media screen and (max-width: 768px) {
-    .hero-container__livreur > h1 {
+    .hero-container__formulaire > h1 {
       font-size: 50px;
       margin-top: -100px;
     }
   
-    .hero-container__livreur > p {
+    .hero-container__formulaire > p {
       font-size: 30px;
     }
   
-    .btn-mobile__livreur {
+    .btn-mobile__formulaire {
       display: block;
       text-decoration: none;
     }
   
-    .btn__livreur {
+    .btn__formulaire {
       width: 100%;
     }
   }
