@@ -17,8 +17,6 @@ function Formulaire({Login, error}) {
 
 <div className='hero-container__formulaire'>   
 
-<video src='/videos/Office.mp4' autoPlay loop muted />
-
 <form onSubmit={submitHandler}>
   
     <div className='form-inner'>

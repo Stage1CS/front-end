@@ -26,24 +26,14 @@ function Connexion() {
         }
     }
 
-    const Logout = () => {
-        setUser({name:"", email:""});
-    }
-
+   
   return (
     <>
     <Navbar/>
-    <div className ="Connexion">
-        {(user.email != "") ? (
-             <div className ="Welcome">
-                  <h2>Welcome,  <span>{user.name}</span></h2>  
-                  <button onClick={Logout}>Logout</button>
-             </div>
-        ) : (   
+    <div className='hero-container__livreur'> 
+    <video src='/videos/Office.mp4' autoPlay loop muted />    
+    
              <Formulaire Login={Login} error={error}/>     
-        )
-        }
-
     </div> 
     </>
   );
