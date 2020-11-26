@@ -13,7 +13,7 @@ function Importer() {
     <form>
       <div className='form-inner'>
 
-      <h2>Veuillez importer les données vers quelle table ?</h2> 
+      <h2>Vous voullez importer les données vers quelle table ?</h2> 
 
       <select name=''> 
           <option value='Séléctionner'>Séléctionner</option>

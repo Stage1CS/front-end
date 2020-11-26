@@ -13,7 +13,7 @@ function Exporter() {
      <form>
       <div className='form-inner'>
 
-      <h2>Veuillez exporter les données à partir de quelle table ?</h2> 
+      <h2>Vous voullez exporter les données à partir de quelle table ?</h2> 
 
       <select name=''> 
           <option value='Séléctionner'>Séléctionner</option>
