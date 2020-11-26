@@ -94,7 +94,22 @@
     border-color: rgb(247, 241, 235);
   }
 
+  form .form-inner .form-group select {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: 0.4s;
+    border-color: rgb(247, 241, 235);
+  }
+
   form .form-inner .form-group input:focus {
+    box-shadow: 0px 0px 3px rgb(255, 255, 255);
+    border: none;
+  }
+
+  form .form-inner .form-group select:focus {
     box-shadow: 0px 0px 3px rgb(255, 255, 255);
     border: none;
   }
@@ -114,7 +129,27 @@
     cursor: pointer;
   }
 
+  form .form-inner select[type="submit"],
+  .welcome button {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #FF7B00;
+    border: none;
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.4s;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
   form .form-inner input[type="submit"]:hover,
+  .welcome button:hover{
+    background-position: 100% 0%;
+  }
+
+  form .form-inner select[type="submit"]:hover,
   .welcome button:hover{
     background-position: 100% 0%;
   }
@@ -168,7 +203,7 @@
     display: grid;
     grid-template-rows: repeat(4, 1fr) 105px;
   }
-  input,
+  input,select,
   textarea {
     background: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -180,7 +215,13 @@
   textarea::placeholder {
    color: rgb(190, 188, 188);
   }
-  input,
+
+  select::placeholder, 
+  textarea::placeholder {
+   color: rgb(190, 188, 188);
+  }
+
+  input,select,
   .email-content,
   textarea {
     width: 90%;
@@ -188,6 +229,9 @@
   }
   input {
     padding: 24px 0 12px;
+  }
+  select {
+    padding: 10px 0 10px;
   }
   .email-content {
     position: relative;

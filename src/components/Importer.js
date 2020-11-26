@@ -8,18 +8,21 @@ import {Link} from 'react-router-dom';
 function Importer() {
   return (
 
-    <div className='hero-container'> 
+    <div className='hero-container__livreur'> 
     <video src='/videos/Office.mp4' autoPlay loop muted />    
-     <form>
+    <form>
       <div className='form-inner'>
 
       <h2>Veuillez importer les données vers quelle table ?</h2> 
 
-      <select name='' className='form-group'> 
+      <select name=''> 
           <option value='Séléctionner'>Séléctionner</option>
           <option value='Livreur'>Livreur</option>
           <option value='Magasin'>Magasin</option>      
       </select>
+
+      <label for="file">Sélectionner le fichier à envoyer</label>
+      <input type="file" id="file" name="file" multiple></input>
 
       <Link to='/Admin' className='nav-links'>
             <input type="submit" value="Importer"/> 

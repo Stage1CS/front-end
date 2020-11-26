@@ -15,7 +15,7 @@ function Exporter() {
 
       <h2>Veuillez exporter les données à partir de quelle table ?</h2> 
 
-      <select name='' className='form-group'> 
+      <select name=''> 
           <option value='Séléctionner'>Séléctionner</option>
           <option value='Livreur'>Livreur</option>
           <option value='Magasin'>Magasin</option>      
