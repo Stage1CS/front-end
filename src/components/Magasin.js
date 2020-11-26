@@ -7,7 +7,7 @@ function Magasin() {
   return (
 
     <div className='hero-container'>
-      <img src='/images/rech.jpg' />
+      hello
     </div>
 
   );
