@@ -3,7 +3,7 @@ import '../App.css';
 import { Button } from './Button';
 import './Rech.css';
 
-function Rech() {
+function Magasin() {
   return (
 
     <div className='hero-container'>
@@ -13,4 +13,4 @@ function Rech() {
   );
 }
 
-export default Rech;
+export default Magasin;
