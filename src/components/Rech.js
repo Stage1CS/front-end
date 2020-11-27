@@ -13,7 +13,7 @@ function Rech() {
      <form>
       <div className='form-inner'>
 
-      <h2>Recherche</h2> 
+      <h2>Recherche avec filtre </h2> 
 
       
 
