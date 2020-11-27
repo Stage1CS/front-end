@@ -8,7 +8,10 @@ function Ajout_Magasin() {
                        
         <>
            <NavbarAdmin/>
-           <Magasin />
+           <div className='hero-container__livreur'> 
+                  <video src='/videos/Office.mp4' autoPlay loop muted />    
+                  <Magasin />
+           </div> 
         </>    
            
       );
