@@ -13,7 +13,7 @@ function GetIcon(_iconSize){
     return L.Icon({
         iconUrl: require("../Static/Icons/map-marker.png"),
         iconSize : [_iconSize]
-    })
+    });
 }
 
 function Magasin() {
