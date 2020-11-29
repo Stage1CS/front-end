@@ -13,9 +13,20 @@ function Rech() {
      <form>
       <div className='form-inner'>
 
-      <h2>Recherche avec filtre </h2> 
-
+      <h2>Recherche  </h2> 
+      <div>
+      <label htmlFor="rechercher">rechercher :</label>
+      <input type="text"
+      id ="rechercher"
+      placeholder="Rechercher un magasin, un livreur...           "
+      defaultValue=""
+      />
       
+      </div>
+  
+
+
+
 
       <Link to='/Admin' className='nav-links'>
             <input type="submit" value="Rechercher"/> 
