@@ -4,19 +4,20 @@ import { Button } from './Button';
 import './Rech.css';
 import './Magasin.css';
 import { Map , TileLayer} from "react-leaflet";
-import { MapContainer, Marker } from 'react-leaflet';
+import { MapContainer, Marker,Popup } from 'react-leaflet';
 import {Link} from 'react-router-dom';
 import "leaflet/dist/leaflet.css";
-import L, { Popup } from "leaflet";
+import L from "leaflet";
 
 function GetIcon(_iconSize){
-    return L.Icon({
-        iconUrl: require("../Static/Icons/map-marker.png"),
+    return L.icon({
+        iconUrl: require("../Static/Icons/map-marker.png"), 
         iconSize : [_iconSize]
-    });
+    }) 
 }
 
 function Magasin() {
+    const position=[1.35, 103.8] 
  
   return (
 
@@ -42,15 +43,17 @@ function Magasin() {
           <input type="text" name="" id="" />     
       </div>    
       <div className='leaflet-container'> 
-<MapContainer className="markercluster-map" center={[51.0, 19.0]} zoom={4} maxZoom={18} >
+<MapContainer className="markercluster-map" center={position} zoom={10} maxZoom={18} >
   <TileLayer
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
  
 />
-<Marker position={[ 36.7367536, 3.1901515] }
-icon={GetIcon(50)}>
-
+<Marker position={position}
+    icon={GetIcon(50)}>
+      <Popup>   
+          location of marker
+      </Popup>   
 
 </Marker>
 
