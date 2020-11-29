@@ -7,11 +7,11 @@ function Ajout_Magasin() {
     return (
                        
         <>
+        
            <NavbarAdmin/>
-           <div className='hero-container__livreur'> 
-                  <video src='/videos/Office.mp4' autoPlay loop muted />    
-                  <Magasin />
-           </div> 
+             
+           <Magasin />
+           
         </>    
            
       );

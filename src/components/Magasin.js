@@ -10,7 +10,7 @@ class Magasin extends React.Component {
     constructor() {
         super();
         this.state = {
-            markers: [[35.6892, 51.3890]],
+            markers: [[36.719719, 3.184080]],
         };
     }
 
@@ -30,10 +30,11 @@ class Magasin extends React.Component {
 
         return (
             <div className='hero-container'>
+                <video src='/videos/Office.mp4' autoPlay loop muted />
                 <form>
                     <div className='form-inner'> 
 
-                        <h2>Veuillez remplir les informations sur le point à ajouter </h2> 
+                        <h2>Veuillez remplir les informations sur le point à ajouter </h2>        
 
                         <div className='form-group'> 
                              <label htmlFor="nom magasin">Nom :</label>
@@ -52,12 +53,12 @@ class Magasin extends React.Component {
 
             <div className='leaflet-container'>            
                 <MapContainer
-                    center={[35.6892, 51.3890]}
+                    center={[36.719719, 3.184080]}
                     onClick={this.addMarker}
                     zoom={13}
                     maxZoom={18}
                     minZoom={5}   
-                    style={{width: '100%',height: '400px'}}
+                    style={{width: '100%',height: '150px'}}
                 >
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -69,6 +70,7 @@ class Magasin extends React.Component {
                 </MapContainer>
             </div>
 
+            
                         <div className='form-group'> 
                               <label htmlFor=""> longitude :</label>
                               <input type="text" name="" id="" />     
