@@ -13,7 +13,7 @@ function Magasin() {
      <form>
       <div className='form-inner'>
 
-      <h2>inscrivez les informations sur le point a ajouter </h2> 
+      <h2>Veuillez remplir les informations sur le point à ajouter </h2> 
 
       <div className='form-group'> 
           <label htmlFor="nom magasin">Nom :</label>
