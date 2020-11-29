@@ -3,9 +3,21 @@ import '../App.css';
 import { Button } from './Button';
 import './Rech.css';
 import './Magasin.css';
+import { Map , TileLayer} from "react-leaflet";
+import { MapContainer, Marker } from 'react-leaflet';
 import {Link} from 'react-router-dom';
+import "leaflet/dist/leaflet.css";
+import L, { Popup } from "leaflet";
+
+function GetIcon(_iconSize){
+    return L.Icon({
+        iconUrl: require("../Static/Icons/map-marker.png"),
+        iconSize : [_iconSize]
+    })
+}
 
 function Magasin() {
+ 
   return (
 
     <div className='hero-container'>
@@ -28,7 +40,24 @@ function Magasin() {
       <div className='form-group'> 
           <label htmlFor="">Numéro de téléphone :</label>
           <input type="text" name="" id="" />     
+      </div>    
+      <div className='leaflet-container'> 
+<MapContainer className="markercluster-map" center={[51.0, 19.0]} zoom={4} maxZoom={18} >
+  <TileLayer
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+ 
+/>
+<Marker position={[ 36.7367536, 3.1901515] }
+icon={GetIcon(50)}>
+
+
+</Marker>
+
+</MapContainer>
+
       </div>
+    
       <div className='form-group'> 
           <label htmlFor=""> longitude :</label>
           <input type="text" name="" id="" />     
@@ -43,6 +72,7 @@ function Magasin() {
       </Link>      
 
      </div>
+    
 </form>
     </div>
 
