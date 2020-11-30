@@ -36,6 +36,8 @@
   form {
     display: block;
     position: absolute;
+    margin-top: 40%;
+    margin-bottom: 15%;
   }
 
   form:after {
