@@ -30,6 +30,9 @@ function Rech() {
 
       <Link to='/Admin' className='nav-links'>
             <input type="submit" value="Rechercher"/> 
+      </Link>  
+      <Link to='/Admin' className='nav-links'>
+            <input type="submit" value="Rechercher"/> 
       </Link>      
 
      </div>
