@@ -1,7 +1,7 @@
 import React from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import {  TileLayer, Marker, Popup } from 'react-leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import {Link} from 'react-router-dom';
@@ -10,7 +10,7 @@ class Magasin extends React.Component {
     constructor() {
         super();
         this.state = {
-            markers: [[35.6892, 51.3890]],
+            markers: [[36.719719, 3.184080]],
         };
     }
 
@@ -19,7 +19,9 @@ class Magasin extends React.Component {
         markers.pop();
         markers.push(e.latlng);
         this.setState({ markers });
+        
     }
+    
 
     render() {
         let DefaultIcon = L.icon({
@@ -30,10 +32,11 @@ class Magasin extends React.Component {
 
         return (
             <div className='hero-container'>
+                <video src='/videos/Office.mp4' autoPlay loop muted />
                 <form>
                     <div className='form-inner'> 
 
-                        <h2>Veuillez remplir les informations sur le point à ajouter </h2> 
+                        <h2>Veuillez remplir les informations sur le point à ajouter </h2>        
 
                         <div className='form-group'> 
                              <label htmlFor="nom magasin">Nom :</label>
@@ -50,33 +53,18 @@ class Magasin extends React.Component {
                               <input type="text" name="" id="" />     
                          </div> 
 
-            <div className='leaflet-container'>            
-                <MapContainer
-                    center={[36.719719, 3.1840080]}
-                    onClick={this.addMarker}
-                    zoom={13}
-                    maxZoom={18}
-                    minZoom={5}   
-                    style={{width: '100%',height: '150px'}}
-                >
-                    <TileLayer
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-                    />
-                    {this.state.markers.map((position, idx) =>
-                        <Marker key={`marker-${idx}`} position={position}></Marker>
-                    )}
-                </MapContainer>
-            </div>
+            <div id='map'>            
+                
+            </div> 
 
                         <div className='form-group'> 
                               <label htmlFor=""> longitude :</label>
-                              <input type="text" name="" id="" />     
+                              <input type="text" name="lng" id="lng" />     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="">latitude :</label>
-                              <input type="text" name="" id="" />     
+                              <input type="text" name="lat" id="lat" />     
                         </div>
 
                         <Link to='/Admin' className='nav-links'>

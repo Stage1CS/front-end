@@ -37,7 +37,9 @@
   
   form {
     display: block;
-    position: relative;
+    position: absolute;
+    margin-top: 40%;
+    margin-bottom: 15%;
   }
 
   form:after {
