@@ -28,7 +28,7 @@ function AcceuilAdmin() {
             />
              <CardItemAdmin
               src='images/livreur.jpg'
-              text='Ajouter un livreur'
+              text='Ajouter livreur'
               path='/Ajout_Livreur'
             />
             <CardItemAdmin

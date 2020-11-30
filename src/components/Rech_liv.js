@@ -7,7 +7,10 @@ import JSONDATA from '../MOCK_DATA.json';
 import {useState} from 'react';
 
 function Rech_liv() {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [nom, setNom] = useState('')
+  const [prenom, setPrenom] = useState('')
+  const [mail, setMail] = useState('')
+  const [num, setNum] = useState('')
   return (
 
     <div className='hero-container__livreur'> 
@@ -17,14 +20,16 @@ function Rech_liv() {
 
      <div className='form-inner'>
 
-      <h2>Magasins </h2> 
+      <h2>Magasins</h2> 
+
+      <label>Par nom</label>
       
-      <input type="text" placeholder="Recherche..." onChange={Event => {setSearchTerm(Event.target.value)} }/>
+      <input type="text" placeholder="Recherche..." onChange={Event => {setNom(Event.target.value)} }/>
 
       {JSONDATA.filter(val => {
-        if (searchTerm == '') {
+        if (nom == '') {
           return val
-        } else if (val.first_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        } else if (val.first_name.toLowerCase().includes(nom.toLowerCase())) {
           return val
         }
       }).map((val,key) => {
