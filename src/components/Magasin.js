@@ -52,12 +52,12 @@ class Magasin extends React.Component {
 
             <div className='leaflet-container'>            
                 <MapContainer
-                    center={[35.6892, 51.3890]}
+                    center={[36.719719, 3.1840080]}
                     onClick={this.addMarker}
                     zoom={13}
                     maxZoom={18}
                     minZoom={5}   
-                    style={{width: '100%',height: '400px'}}
+                    style={{width: '100%',height: '150px'}}
                 >
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
