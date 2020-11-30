@@ -56,8 +56,7 @@ class Magasin extends React.Component {
             <div id='map'>            
                 
             </div> 
-
-                        <div className='form-group'> 
+                      <div className='form-group'> 
                               <label htmlFor=""> longitude :</label>
                               <input type="text" name="lng" id="lng" />     
                         </div>
