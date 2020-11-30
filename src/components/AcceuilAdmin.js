@@ -18,8 +18,13 @@ function AcceuilAdmin() {
 
           <CardItemAdmin
               src='images/loupe.jpg'
-              text='Effectuer une rechercher'
-              path='/Recherche'
+              text='Rechercher livreur'
+              path='/Recherche_liv'
+            />
+            <CardItemAdmin
+              src='images/loupe.jpg'
+              text='Rechercher magasin'
+              path='/Recherche_mag'
             />
              <CardItemAdmin
               src='images/livreur.jpg'
@@ -28,7 +33,7 @@ function AcceuilAdmin() {
             />
             <CardItemAdmin
               src='images/location.jpg'
-              text='Ajouter un point de vente'
+              text='Ajouter point de vente'
               path='/Ajout_Magasin'
             /> 
              <CardItemAdmin

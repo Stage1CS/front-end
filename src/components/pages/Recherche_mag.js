@@ -1,17 +1,17 @@
 import React from 'react';
 import '../../App.css';
-import Rech from '../Rech';
+import Rech_mag from '../Rech_mag';
 import NavbarAdmin from '../NavbarAdmin';
 
-function Recherche() {
+function Recherche_mag() {
     return (
                        
         <>
            <NavbarAdmin/>
-           <Rech />
+           <Rech_mag />
         </>    
            
       );
 }
 
-export default Recherche;
+export default Recherche_mag;
