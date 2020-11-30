@@ -78,5 +78,14 @@ video {
     font-weight: 500;
     margin-bottom: 30px;
   }
+  .recherche {
+    font-family: "Myriad_Pro", Helvetica, sans-serif;
+    font-size: 0.8em;
+  }
+  #search
+  {
+    padding: 5px ;
+    border-radius: 40px ;
+  }
 
   
