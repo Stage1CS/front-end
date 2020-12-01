@@ -11,6 +11,7 @@ function Rech_liv() {
   const [prenom, setPrenom] = useState('')
   const [mail, setMail] = useState('')
   const [num, setNum] = useState('')
+
   return (
 
     <div className='hero-container__livreur'> 
@@ -20,16 +21,7 @@ function Rech_liv() {
 
      <div className='form-inner'>
 
-      <h2>Magasins</h2> 
-
-
-      <select name=''> 
-          <option value='Séléctionner'>Séléctionner</option>
-          <option value='Nom'>Nom</option>
-          <option value='Prénom'>Prénom</option>
-          <option value='Mail'>Mail</option>
-          <option value='Numéro de tel'>Numéro de tel</option>      
-      </select>
+      <h2>Livreur</h2>   
 
       <div className='form-group'> 
           <label htmlFor="name">Nom :</label>
@@ -50,7 +42,22 @@ function Rech_liv() {
           <label htmlFor="num">Numéro de tel :</label>
           <input type="text" name="num" id="num" type="text" placeholder="Recherche..." onChange={Event => {setNum(Event.target.value)} }/>     
       </div>
-       
+
+      <h2>
+
+      {JSONDATA.filter(val => {
+        if (nom =='' && prenom=='' && mail=='' && num=='') {
+          return 
+        } else if (val.first_name.toLowerCase().includes(nom.toLowerCase()) || val.last_name.toLowerCase().includes(prenom.toLowerCase()) || val.email.toLowerCase().includes(mail.toLowerCase()) || val.number.toLowerCase().includes(num.toLowerCase())) {
+          return val
+        }
+      }).map((val,key) => {
+        return<div className='form-inner'><p>{val.first_name} {val.last_name}</p></div>
+      }
+      )}
+
+      </h2>
+
      </div>
 
 </form>
