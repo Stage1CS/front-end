@@ -35,6 +35,21 @@ function Rech_mag() {
           <label htmlFor="phone">Numéro de tel :</label>
           <input type="text" name="phone" id="phone" type="text" placeholder="Recherche..." onChange={Event => {setPhone(Event.target.value)} }/>     
       </div>
+
+      <h2>
+
+      {JSONDATA.filter(val => {
+        if (name ==''  && email=='' && phone=='') {
+          return 
+        } else if (val.first_name.toLowerCase().includes(name.toLowerCase()) || val.email.toLowerCase().includes(email.toLowerCase()) || val.number.toLowerCase().includes(phone.toLowerCase()) ) {
+          return val
+        }
+      }).map((val,key) => {
+        return<div className='form-inner'><p>{val.first_name} {val.last_name}</p></div>
+      }
+      )}
+
+      </h2>
        
      </div>
 
