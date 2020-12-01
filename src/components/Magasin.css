@@ -5,6 +5,26 @@ video {
     position: fixed;
     z-index: -1;
   }
+
+
+  .hero-container .haha {
+    margin-top: 40%;
+  }
+
+  .hero-container form:after {
+    content: '';
+    display: block;
+    position: absolute;
+    margin-top: 40%;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: 1;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom right, #ff7b00, #FF7B00);
+  }
+
   
   .hero-container {
     /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
@@ -78,7 +98,5 @@ video {
     font-weight: 500;
     margin-bottom: 30px;
   }
-
-
 
   

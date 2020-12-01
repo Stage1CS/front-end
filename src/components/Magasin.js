@@ -4,6 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import {Link} from 'react-router-dom';
+import './Magasin.css';
+
 
 class Magasin extends React.Component {
     constructor() {
@@ -33,6 +35,7 @@ class Magasin extends React.Component {
             <div className='hero-container'>
                 <video src='/videos/Office.mp4' autoPlay loop muted />
                 <form>
+                <div className='haha'>
                     <div className='form-inner'> 
 
                         <h2>Veuillez remplir les informations sur le point à ajouter </h2>        
@@ -70,7 +73,7 @@ class Magasin extends React.Component {
                          </Link>      
 
                     </div>
-    
+                    </div>
                 </form>
             </div>
         );

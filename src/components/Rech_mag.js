@@ -7,7 +7,9 @@ import JSONDATA from '../MOCK_DATA.json';
 import {useState} from 'react';
 
 function Rech_mag() {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
   return (
 
     <div className='hero-container__livreur'> 
@@ -18,19 +20,21 @@ function Rech_mag() {
      <div className='form-inner'>
 
       <h2>Magasins </h2> 
-      
-      <input type="text" placeholder="Recherche..." onChange={Event => {setSearchTerm(Event.target.value)} }/>
 
-      {JSONDATA.filter(val => {
-        if (searchTerm == '') {
-          return val
-        } else if (val.first_name.toLowerCase().includes(searchTerm.toLowerCase())) {
-          return val
-        }
-      }).map((val,key) => {
-        return<div className='form-inner'><p>{val.first_name}</p></div>
-      }
-      )}
+      <div className='form-group'> 
+          <label htmlFor="name">Nom :</label>
+          <input type="text" name="name" id="name" type="text" placeholder="Recherche..." onChange={Event => {setName(Event.target.value)} }/>     
+      </div>
+
+      <div className='form-group'> 
+          <label htmlFor="email">Mail :</label>
+          <input type="text" name="email" id="email" type="text" placeholder="Recherche..." onChange={Event => {setEmail(Event.target.value)} }/>     
+      </div>
+
+      <div className='form-group'> 
+          <label htmlFor="phone">Numéro de tel :</label>
+          <input type="text" name="phone" id="phone" type="text" placeholder="Recherche..." onChange={Event => {setPhone(Event.target.value)} }/>     
+      </div>
        
      </div>
 
