@@ -33,7 +33,8 @@ class Magasin extends React.Component {
         return (
             <div className='hero-container'>
                 <video src='/videos/Office.mp4' autoPlay loop muted />
-                <form className='formulaire'>
+                <form>
+                <div className='haha'>
                     <div className='form-inner'> 
 
                         <h2>Veuillez remplir les informations sur le point à ajouter </h2>        
@@ -71,7 +72,7 @@ class Magasin extends React.Component {
                          </Link>      
 
                     </div>
-    
+                    </div>
                 </form>
             </div>
         );
