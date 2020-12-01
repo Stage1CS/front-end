@@ -7,7 +7,10 @@ import JSONDATA from '../MOCK_DATA.json';
 import {useState} from 'react';
 
 function Rech_liv() {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [name, setName] = useState('')
+  const [prenom, setPrenom] = useState('')
+  const [mail, setMail] = useState('')
+  const [num, setNum] = useState('')
   return (
 
     <div className='hero-container__livreur'> 
@@ -17,20 +20,24 @@ function Rech_liv() {
 
      <div className='form-inner'>
 
-      <h2>Magasins </h2> 
-      
-      <input type="text" placeholder="Recherche..." onChange={Event => {setSearchTerm(Event.target.value)} }/>
+      <h2>Magasins</h2> 
 
-      {JSONDATA.filter(val => {
-        if (searchTerm == '') {
-          return val
-        } else if (val.first_name.toLowerCase().includes(searchTerm.toLowerCase())) {
-          return val
-        }
-      }).map((val,key) => {
-        return<div className='form-inner'><p>{val.first_name}</p></div>
-      }
-      )}
+      <label>Par nom</label>
+      
+      <input type="text" placeholder="Recherche..." onChange={Event => {setName(Event.target.value)} }/>
+       
+       <label>Par prenom    </label>
+      
+      <input type="text" placeholder="Recherche..." onChange={Event => {setPrenom(Event.target.value)} }/>
+
+<label>Par mail</label>
+      
+      <input type="text" placeholder="Recherche..." onChange={Event => {setMail(Event.target.value)} }/>
+
+       <label>Par numero </label>
+      
+      <input type="text" placeholder="Recherche..." onChange={Event => {setNum(Event.target.value)} }/>
+       
        
      </div>
 
