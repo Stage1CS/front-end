@@ -10,50 +10,45 @@ function Rech_mag() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [rech, setRech] = useState('')
+
+
+
+    fetch('https://laravelapi.ouedsmar.com/public/api/livreur')
+      .then(response => response.json())
+      .then(data => this.setState({ data }));
+  
   return (
 
     <div className='hero-container__livreur'> 
-    <video src='/videos/Office.mp4' autoPlay loop muted />    
+    <video src='/videos/Office.mp4' autoPlay loop muted />  
 
-<form>
+     <form>
 
-     <div className='form-inner'>
+<div className='form-inner'>
 
-      <h2>Magasins </h2> 
+ <h2>Livreur</h2>   
 
-      <div className='form-group'> 
-          <label htmlFor="name">Nom :</label>
-          <input type="text" name="name" id="name" type="text" placeholder="Recherche..." onChange={Event => {setName(Event.target.value)} }/>     
-      </div>
+ <div className='form-group'> 
+     <label htmlFor="name">Recherche :</label>
+     <input type="text" name="name" id="nom" type="text" placeholder="Recherche..." onChange={Event => {setRech(Event.target.value)} }/>     
+ <h2>
 
-      <div className='form-group'> 
-          <label htmlFor="email">Mail :</label>
-          <input type="text" name="email" id="email" type="text" placeholder="Recherche..." onChange={Event => {setEmail(Event.target.value)} }/>     
-      </div>
+ {JSONDATA
+ .filter(val => {return  (val.first_name.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.email.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.last_name.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))})
+ .map((val,key) => {
+   return<div className='form-inner'><p>  {val.email} </p></div>
+ }
+ )}
 
-      <div className='form-group'> 
-          <label htmlFor="phone">Numéro de tel :</label>
-          <input type="text" name="phone" id="phone" type="text" placeholder="Recherche..." onChange={Event => {setPhone(Event.target.value)} }/>     
-      </div>
+ </h2>
 
-      <h2>
+</div>
+</div>
 
-      {JSONDATA.filter(val => {
-        if (name ==''  && email=='' && phone=='') {
-          return 
-        } else if (val.first_name.toLowerCase().includes(name.toLowerCase()) || val.email.toLowerCase().includes(email.toLowerCase()) || val.number.toLowerCase().includes(phone.toLowerCase()) ) {
-          return val
-        }
-      }).map((val,key) => {
-        return<div className='form-inner'><p>{val.first_name} {val.last_name}</p></div>
-      }
-      )}
+</form>  
 
-      </h2>
-       
-     </div>
 
-</form>
     </div>
 
   );
