@@ -1,20 +1,17 @@
 import React from 'react';
 import '../../App.css';
-import Magasin from '../Magasin';
+import Rech_mag from '../Rech_mag';
 import NavbarAdmin from '../NavbarAdmin';
 
-function Ajout_Magasin() {
+function Recherche_mag() {
     return (
                        
         <>
-        
            <NavbarAdmin/>
-             
-           <Magasin />
-           
+           <Rech_mag />
         </>    
            
       );
 }
 
-export default Ajout_Magasin;
+export default Recherche_mag;

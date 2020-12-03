@@ -9,7 +9,11 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+     crossorigin="anonymous">
 
     <link
     href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap"
@@ -31,10 +35,40 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+		<link rel="stylesheet" href="leaflet/L.Control.Locate.css" />
+		<link rel="stylesheet" href="leaflet/leaflet-search.css" />
+		<script src="leaflet/leaflet.js"></script>
+		<script src="leaflet/L.Grid.js"></script>
+		<script src="leaflet/L.Control.Locate.js"></script>
+    <style>
+			.leaflet-marker-icon{
+				display: none !important;
+			}
+			.leaflet-marker-shadow{
+				display: none !important;
+			}
+
+			#map{
+				height: 300px;
+        width: 100%;
+				}
+
+		</style>
     <title>React App</title>
+    
   </head>
   <body>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+   
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="map" style="display: none;"></div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -46,5 +80,38 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
   </body>
+
+  <script>
+		String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+		var lock=false;
+		var permahash=false;
+		var next=false;
+		var marker=null;
+		
+		var gridLayer = new L.LayerGroup();
+
+
+		//Create a new layer to add the openstreetmap map
+		var map = L.map('map').setView([36.719719, 3.184080], 6);
+		
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		}).addTo(map);
+		map.attributionControl.setPrefix(false);
+			map.dragging.enable();
+			map.touchZoom.enable();
+			map.doubleClickZoom.enable();
+			map.scrollWheelZoom.enable();
+
+			map.on("contextmenu", function (event) {
+				console.log(event.latlng.toString())
+				document.querySelector('#lat').value = event.latlng.toString().split('(')[1].split(',')[0];
+				document.querySelector('#lng').value = event.latlng.toString().split('(')[1].split(',')[1].split(')')[0].trim();
+					L.marker(event.latlng).addTo(map);
+				});
+
+    	map.addControl(new L.Control.Scale({width: 200, position: 'bottomleft', imperial: false}));
+	</script>
 </html>

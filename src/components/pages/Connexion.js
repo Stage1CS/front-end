@@ -1,18 +1,45 @@
-import React, {useState} from 'react';
+import React, {useContext,useState} from 'react';
 import '../../App.css';
 import Formulaire from '../Formulaire';
 import Navbar from '../Navbar';
+import {useHistory} from 'react-router-dom';
 
 function Connexion() {
     const adminUser = {
         email : "admin@admin.com",
         password: "admin123"
     }
+    const history = useHistory()
 
     const [user, setUser] = useState({name:"", email:""});
     const [error, setError] = useState("");
 
-    const Login = details => {
+    const Login = (details,setToken) => 
+    {
+        fetch('https://laravelapi.ouedsmar.com/public/api/login',
+        {
+            method:'POST',
+            headers: new Headers({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }),
+            body: "email="+details.email+ "&password="+details.password
+        })
+      .then((response) => response.json())
+      .then((responseText) =>{
+
+        if (responseText.access_token)
+        {
+            setToken(responseText.access_token)
+            history.push("/Admin",{token:responseText.access_token});
+        }
+        else alert("mot de passe erroné");
+     })
+     .catch((error) =>
+     {console.error(error);
+    });  
+    }
+    
+   /* {
         console.log(details);
         if (details.email == adminUser.email && details.password == adminUser.password) {
             console.log("Vous etes connecté");
@@ -25,25 +52,15 @@ function Connexion() {
             setError("Erreur");
         }
     }
-
-    const Logout = () => {
-        setUser({name:"", email:""});
-    }
-
+*/
+   
   return (
     <>
     <Navbar/>
-    <div className ="Connexion">
-        {(user.email != "") ? (
-             <div className ="Welcome">
-                  <h2>Welcome,  <span>{user.name}</span></h2>  
-                  <button onClick={Logout}>Logout</button>
-             </div>
-        ) : (   
+    <div className='hero-container__livreur'> 
+    <video src='/videos/Office.mp4' autoPlay loop muted />    
+    
              <Formulaire Login={Login} error={error}/>     
-        )
-        }
-
     </div> 
     </>
   );

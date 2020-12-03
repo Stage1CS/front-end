@@ -1,20 +1,17 @@
 import React from 'react';
 import '../../App.css';
-import Magasin from '../Magasin';
+import Rech_liv from '../Rech_liv';
 import NavbarAdmin from '../NavbarAdmin';
 
-function Ajout_Magasin() {
+function Recherche_liv() {
     return (
                        
         <>
-        
            <NavbarAdmin/>
-             
-           <Magasin />
-           
+           <Rech_liv />
         </>    
            
       );
 }
 
-export default Ajout_Magasin;
+export default Recherche_liv;
