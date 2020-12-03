@@ -12,6 +12,7 @@ function Rech_mag() {
 
   const location = useLocation();
   var token = location.state.token;
+  console.log("token ->"+token)
   const [data, setData] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
@@ -22,7 +23,7 @@ useEffect(() => {
       .then(response => response.json())
       .then(data => setData( data ))},[]);
       console.log(data);
-      console.log('got the data')
+     
   
   return (
 

@@ -9,7 +9,8 @@ import {useLocation} from 'react-router-dom';
 
 function Rech_liv() {
   const location = useLocation();
-  //var token = location.state.token;
+  var token = location.state.token;
+  console.log("token :  ->"+token)
   const [nom, setNom] = useState('')
   const [prenom, setPrenom] = useState('')
   const [mail, setMail] = useState('')

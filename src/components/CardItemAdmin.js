@@ -6,7 +6,7 @@ function CardItemAdmin(props) {
   return (
     <>
       <li className='cards__item__admin'>
-        <Link className='cards__item__link__admin' to={props.path}>
+        <Link className='cards__item__link__admin' to={{pathname:props.path,state:{token:props.token}}}>
           <figure className='cards__item__pic-wrap__admin' data-category={props.label}>
             <img
               className='cards__item__img__admin'
