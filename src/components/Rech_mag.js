@@ -16,7 +16,7 @@ function Rech_mag() {
 
 
 useEffect(() => {
-    fetch('https://laravelapi.ouedsmar.com/public/api/livreur&token=')
+    fetch('https://laravelapi.ouedsmar.com/public/api/livreur&token')
       .then(response => response.json())
       .then(data => setData( data ))},[]);
       console.log(data);
