@@ -9,7 +9,6 @@ function Ajout_Magasin() {
         <>
         
            <NavbarAdmin/>
-             
            <Magasin />
            
         </>    

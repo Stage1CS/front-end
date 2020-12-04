@@ -24,6 +24,7 @@ class Magasin extends React.Component {
     
 
     render() {
+
         let DefaultIcon = L.icon({
             iconUrl: icon,
             shadowUrl: iconShadow

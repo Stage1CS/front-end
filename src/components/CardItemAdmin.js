@@ -10,7 +10,7 @@ function CardItemAdmin(props) {
           <figure className='cards__item__pic-wrap__admin' data-category={props.label}>
             <img
               className='cards__item__img__admin'
-              alt='Travel Image'
+              alt=''
               src={props.src}
             />
           </figure>

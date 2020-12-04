@@ -11,7 +11,6 @@ function Admin() {
   var token='none'
   try{ token = location.state.token;}
   catch{
-
   }
     return (           
         <>

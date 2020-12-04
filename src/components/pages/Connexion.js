@@ -10,7 +10,6 @@ function Connexion() {
         password: "admin123"
     }
     const history = useHistory()
-
     const [user, setUser] = useState({name:"", email:""});
     const [error, setError] = useState("");
 

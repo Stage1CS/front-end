@@ -1,10 +1,15 @@
 import React from 'react';
 import '../App.css';
-import { Button } from './Button';
 import './Livreur.css';
 import {Link} from 'react-router-dom';
+import {useState} from 'react';
+import {useLocation} from 'react-router-dom';
 
 function Livreur() {
+    const location = useLocation();
+    var token = location.state.token;
+    console.log("token :  ->"+token)
+
   return (
 
  <div className='hero-container__livreur'> 

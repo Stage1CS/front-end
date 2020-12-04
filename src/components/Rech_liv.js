@@ -1,8 +1,6 @@
 import React from 'react';
 import '../App.css';
-
 import './Rech_liv.css';
-
 import JSONDATA from '../MOCK_DATA.json';
 import {useState} from 'react';
 import {useLocation} from 'react-router-dom';
@@ -11,10 +9,6 @@ function Rech_liv() {
   const location = useLocation();
   var token = location.state.token;
   console.log("token :  ->"+token)
-  const [nom, setNom] = useState('')
-  const [prenom, setPrenom] = useState('')
-  const [mail, setMail] = useState('')
-  const [num, setNum] = useState('')
   const [rech, setRech] = useState('')
 
   return (
@@ -22,7 +16,7 @@ function Rech_liv() {
     <div className='hero-container__livreur'> 
     <video src='/videos/Office.mp4' autoPlay loop muted />    
 
-    <form>
+<form>
 
 <div className='form-inner'>
 
