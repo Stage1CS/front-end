@@ -79,6 +79,54 @@ video {
     margin-bottom: 30px;
   }
 
+  .ko {
+    
+      display: flex;
+      position: absolute;
+      margin-top: 50%;
+      margin-bottom: 15%;
+      flex-wrap: wrap;
+      width: 80vw;  
+  }
+
+  .ko .form-inner{
+    width: 80vw;
+    position: relative;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    z-index: 2;
+  }
+
+  .ko .form-inner .form-group  {
+      display: block;
+      width: 300px;
+      margin-bottom: 10px;
+      width: 80vw;
+  }
+  
+  .ko .form-inner h2{
+    color: #888;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    width: 80vw;
+   }
+
+  .ko:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    width: 80vw;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom right, #ff7b00, #FF7B00);
+  }
+
 
 
   

@@ -5,28 +5,32 @@ import './Rech_mag.css';
 import {Link} from 'react-router-dom';
 import JSONDATA from '../MOCK_DATA.json';
 import {useState , useEffect} from 'react';
+import {useLocation} from 'react-router-dom'
 
 
 function Rech_mag() {
-  const [data, setData] = useState('')
+
+  const location = useLocation();
+  var token = location.state.token;
+  console.log("token ->"+token)
+  const [data, setData] = useState([])
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [rech, setRech] = useState('')
   
-
-
 useEffect(() => {
-    fetch('https://laravelapi.ouedsmar.com/public/api/livreur&token')
+    fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token)
       .then(response => response.json())
       .then(data => setData( data ))},[]);
       console.log(data);
+     
   
   return (
 
     <div className='hero-container__livreur'> 
     <video src='/videos/Office.mp4' autoPlay loop muted />  
 
-     <form>
+<form className='ko'>
 
 <div className='form-inner'>
 
@@ -37,10 +41,10 @@ useEffect(() => {
      <input type="text" name="name" id="nom" type="text" placeholder="Recherche..." onChange={Event => {setRech(Event.target.value)} }/>     
  <h2>
 
- {JSONDATA
+ {data
  .filter(val => {return  (val.first_name.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.email.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.last_name.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))})
  .map((val,key) => {
-   return<div className='form-inner'><p> {val.last_name} {val.email} {val.number}</p></div>
+ return<div className='form-inner'><p> {val.Phone} {val.email} {val.name}{val.detail }</p></div>
  }
  )}
 

@@ -1,12 +1,16 @@
 import React from 'react';
 import '../App.css';
-import { Button } from './Button';
+
 import './Rech_liv.css';
-import {Link} from 'react-router-dom';
+
 import JSONDATA from '../MOCK_DATA.json';
 import {useState} from 'react';
+import {useLocation} from 'react-router-dom';
 
 function Rech_liv() {
+  const location = useLocation();
+  var token = location.state.token;
+  console.log("token :  ->"+token)
   const [nom, setNom] = useState('')
   const [prenom, setPrenom] = useState('')
   const [mail, setMail] = useState('')

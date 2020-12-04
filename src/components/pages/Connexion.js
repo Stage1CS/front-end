@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext,useState} from 'react';
 import '../../App.css';
 import Formulaire from '../Formulaire';
 import Navbar from '../Navbar';
@@ -30,18 +30,30 @@ function Connexion() {
         if (responseText.access_token)
         {
             setToken(responseText.access_token)
-            history.push({
-                pathname: "/Admin",
-                state: { token: responseText.access_token.toString() },
-              });
-            
+            history.push("/Admin",{token:responseText.access_token});
         }
         else alert("mot de passe erroné");
      })
      .catch((error) =>
      {console.error(error);
     });  
-    }   
+    }
+    
+   /* {
+        console.log(details);
+        if (details.email == adminUser.email && details.password == adminUser.password) {
+            console.log("Vous etes connecté");
+            setUser({
+                name: details.name,
+                email: details.email
+            });
+        } else {
+            console.log("Erreur");
+            setError("Erreur");
+        }
+    }
+*/
+   
   return (
     <>
     <Navbar/>

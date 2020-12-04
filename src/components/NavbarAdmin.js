@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import { Button } from './Button';
 import './NavbarAdmin.css';
 
 function NavbarAdmin() {
@@ -29,7 +28,7 @@ function NavbarAdmin() {
          <nav className="navbar">         
             <div className="navbar-container">
             <Link to="/Admin" className="navbar-logo" onClick={closeMobileMenu}>       
-            <i class="fas fa-truck-loading"></i>
+            <i className="fas fa-truck-loading"></i>
             </Link>
 
             <Link to="/Admin" className="navbar-logo" onClick={closeMobileMenu}>       

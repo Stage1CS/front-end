@@ -21,7 +21,7 @@ function App() {
      <Router>
           <Route path='/' exact component={Home} />
           <Route path='/Connexion' exact component={Connexion} />
-          <Route path='/Admin' exact component={Admin()} />
+          <Route path='/Admin' exact component={Admin} />
           <Route path='/Recherche_liv' exact component={Recherche_liv} />
           <Route path='/Recherche_mag' exact component={Recherche_mag} />
           <Route path='/Ajout_Livreur' exact component={Ajout_Livreur} />
