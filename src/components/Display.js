@@ -1,10 +1,9 @@
-import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom'
 
-function History() {
+function Display() {
     const location = useLocation();
     var token = location.state.token;
     console.log("token :  ->"+token)
 }
 
-export default History
+export default Display

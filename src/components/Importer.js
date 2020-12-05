@@ -9,7 +9,7 @@ function Importer() {
   const location = useLocation();
   var token = location.state.token;
   console.log("token :  ->"+token)
-  
+
   return (
 
     <div className='hero-container__livreur'> 
@@ -28,10 +28,12 @@ function Importer() {
       <label for="file">Sélectionner le fichier à envoyer</label>
       <input type="file" id="file" name="file" multiple></input>
 
+      <div className='hohoho'>
       <Link to='/Admin' className='nav-links'>
             <input type="submit" value="Importer"/> 
       </Link>      
-
+      </div>
+      
      </div>
     </form>
     </div>

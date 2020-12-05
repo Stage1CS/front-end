@@ -1,4 +1,4 @@
-import React, {useContext,useState} from 'react';
+import React, {useState} from 'react';
 import '../../App.css';
 import Formulaire from '../Formulaire';
 import Navbar from '../Navbar';
@@ -51,7 +51,7 @@ function Connexion() {
             setError("Erreur");
         }
     }
-*/
+   */
    
   return (
     <>

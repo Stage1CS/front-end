@@ -1,9 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Button } from './Button';
 import './Rech_mag.css';
-import {Link} from 'react-router-dom';
-import JSONDATA from '../MOCK_DATA.json';
 import {useState , useEffect} from 'react';
 import {useLocation} from 'react-router-dom'
 
@@ -14,17 +11,14 @@ function Rech_mag() {
   var token = location.state.token;
   console.log("token ->"+token)
   const [data, setData] = useState([])
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
   const [rech, setRech] = useState('')
   
 useEffect(() => {
-    fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token)
+    fetch('https://laravelapi.ouedsmar.com/public/api/magasin='+token)
       .then(response => response.json())
-      .then(data => setData( data ))},[]);
+      .then(data => setData(data))});
       console.log(data);
      
-  
   return (
 
     <div className='hero-container__livreur'> 
@@ -38,13 +32,13 @@ useEffect(() => {
 
  <div className='form-group'> 
      <label htmlFor="name">Recherche:</label>
-     <input type="text" name="name" id="nom" type="text" placeholder="Recherche..." onChange={Event => {setRech(Event.target.value)} }/>     
+     <input type="text" name="name" id="nom" placeholder="Recherche..." onChange={Event => {setRech(Event.target.value)}}/>     
  <h2>
 
  {data
  .filter(val => {return  (val.first_name.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.email.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.last_name.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))})
  .map((val,key) => {
- return<div className='form-inner'><p> {val.Phone} {val.email} {val.name}{val.detail }</p></div>
+   return<div className='form-inner'><p>{val.first_name} {val.last_name} {val.email} {val.number}</p></div>
  }
  )}
 

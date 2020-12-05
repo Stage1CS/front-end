@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import './Livreur.css';
 import {Link} from 'react-router-dom';
-import {useState} from 'react';
 import {useLocation} from 'react-router-dom';
 
 function Livreur() {
