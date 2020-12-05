@@ -5,32 +5,15 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import {Link} from 'react-router-dom';
 import './Magasin.css';
+import {useLocation} from 'react-router-dom';
+import {setPostName , useEffect} from 'react';
 
-class Magasin extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            markers: [[36.719719, 3.184080]],
-        };
-    }
+function Magasin(props) {
 
-    addMarker = (e) => {
-        const { markers } = this.state;
-        markers.pop();
-        markers.push(e.latlng);
-        this.setState({ markers });
-        
-    }
+    const location = useLocation();
+    var token = location.state.token;
+    console.log("magasin :  ->"+token);
     
-
-    render() {
-
-        let DefaultIcon = L.icon({
-            iconUrl: icon,
-            shadowUrl: iconShadow
-        });
-        L.Marker.prototype.options.icon = DefaultIcon;
-
         return (
             <div className='hero-container'>
                 <video src='/videos/Office.mp4' autoPlay loop muted />
@@ -78,6 +61,5 @@ class Magasin extends React.Component {
             </div>
         );
     }
-}
 
 export default Magasin;

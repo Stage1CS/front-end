@@ -13,42 +13,37 @@ function Rech_liv() {
   const [rech, setRech] = useState('')
   
 useEffect(() => {
-    fetch('https://laravelapi.ouedsmar.com/public/api/livreur='+token)
+    fetch('https://laravelapi.ouedsmar.com/public/api/livreur?token='+token)
       .then(response => response.json())
       .then(data => setData(data))},[]);
       console.log(data);
 
   return (
 
-    <div className='hero-container__livreur'> 
+  <div className='hero-container__livreur'> 
     <video src='/videos/Office.mp4' autoPlay loop muted />    
 
-<form>
+      <form>
+        <div className='form-inner'>
 
-<div className='form-inner'>
+                  <h2>Livreur</h2>   
 
- <h2>Livreur</h2>   
+          <div className='form-group'> 
+            <label htmlFor="name">Recherche :</label>
+            <input type="text" name="rech" id="rech" placeholder="Recherche..." onChange={Event => {setRech(Event.target.value)}}/>     
+              <h2>
+                {data
+                .filter(val => {return  (val.nom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.prénom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.mail.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))  || (val.num.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) })
+                .map((val,key) => {
+                  return<div className='form-inner'><p>{val.nom} {val.prénom} {val.mail} {val.num}</p></div>
+                }
+                )}
+              </h2>
+          </div>
+        </div>
 
- <div className='form-group'> 
-     <label htmlFor="name">Nom :</label>
-     <input type="text" name="name" id="nom" placeholder="Recherche..." onChange={Event => {setRech(Event.target.value)}}/>     
- <h2>
-
- {data
- .filter(val => {return  (val.nom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.prénom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.mail.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))  || (val.num.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) })
- .map((val,key) => {
-   return<div className='form-inner'><p>{val.nom} {val.prénom} {val.mail} {val.num}</p></div>
- }
- )}
-
- </h2>
-
-</div>
-</div>
-
-</form>
-    </div>
-
+      </form>
+  </div>
   );
 }
 
