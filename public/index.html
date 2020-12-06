@@ -108,10 +108,11 @@
 
 			map.on("contextmenu", function (event) {
         console.log(event.latlng.toString())
-        document.getElementById('lat').focus();
-				document.getElementById('lat').value = event.latlng.toString().split('(')[1].split(',')[0];
-        document.getElementById('lng').focus();
+        
+        document.getElementById('lat').value = event.latlng.toString().split('(')[1].split(',')[0];
+        document.getElementById('lat').focus();      
         document.getElementById('lng').value = event.latlng.toString().split('(')[1].split(',')[1].split(')')[0].trim();
+        document.getElementById('lng').focus();
 					/*L.marker(event.latlng).addTo(map);*/
 				});
 

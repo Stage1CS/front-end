@@ -62,12 +62,12 @@ function Magasin(props) {
 
                         <div className='form-group'> 
                               <label htmlFor="lng"> longitude :</label>
-                              <input type="text" name="lng" id="lng" onChange={e => setInfo({...info,lng: e.target.value})} value={info.lng}/>     
+                              <input type="text" name="lng" id="lng" onFocus={e => setInfo({...info,lng: e.target.value})} value={info.lng}/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="lat">latitude :</label>
-                              <input type="text" name="lat" id="lat" onChange={e => setInfo({...info,lat: e.target.value})} value={info.lat}/>     
+                              <input type="text" name="lat" id="lat" onFocus={e => setInfo({...info,lat: e.target.value})} value={info.lat}/>     
                         </div>
 
                         <Link to='/Admin' className='nav-links'>

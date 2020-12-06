@@ -1,8 +1,10 @@
 import React from 'react';
 import '../App.css';
 import './Rech_liv.css';
+import './CardsAdmin.css';
+import CardItemRech from './CardItemRech';
 import {useState , useEffect} from 'react';
-import {useLocation} from 'react-router-dom'
+import {useLocation} from 'react-router-dom';
 
 function Rech_liv() {
 
@@ -35,8 +37,26 @@ useEffect(() => {
                 {data
                 .filter(val => {return  (val.nom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.prénom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.mail.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))  || (val.num.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) })
                 .map((val,key) => {
-                  return<div className='form-inner'><p>{val.nom} {val.prénom} {val.mail} {val.num}</p></div>
-                }
+                  return<div className='form-inner'>
+
+                        <div className='cards__container'>
+                          <div className='cards__wrapper'>
+                            <ul className='cards__items'>
+
+                            <CardItemRech
+                              src='../public/images/delivery-man.png'
+                              text1={val.nom} 
+                              text2={val.prénom}
+                              text3={val.mail}
+                              path='/Recherche_liv'
+                              token={token}
+                            />           
+                            </ul>
+                          </div>
+                        </div>                    
+                    
+                    </div>
+                  }
                 )}
               </h2>
           </div>
