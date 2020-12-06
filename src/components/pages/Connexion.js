@@ -1,4 +1,4 @@
-import React, {useContext,useState} from 'react';
+import React, {useState} from 'react';
 import '../../App.css';
 import Formulaire from '../Formulaire';
 import Navbar from '../Navbar';
@@ -10,7 +10,6 @@ function Connexion() {
         password: "admin123"
     }
     const history = useHistory()
-
     const [user, setUser] = useState({name:"", email:""});
     const [error, setError] = useState("");
 
@@ -52,7 +51,7 @@ function Connexion() {
             setError("Erreur");
         }
     }
-*/
+   */
    
   return (
     <>

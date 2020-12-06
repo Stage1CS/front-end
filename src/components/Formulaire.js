@@ -1,17 +1,14 @@
 import React,{useState} from 'react';
 import '../App.css';
 import './Formulaire.css';
-import {Link} from 'react-router-dom';
 
 function Formulaire({Login, error}) {
 
     const[details, setDetails] =useState({email:"", password:""});
     const [token, setToken] =useState("");
-
     const submitHandler = e => {
-        e.preventDefault();
-
-        Login(details,setToken);
+                    e.preventDefault();
+    Login(details,setToken);
     }
 
   return (

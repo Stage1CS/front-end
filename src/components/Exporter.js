@@ -1,11 +1,14 @@
 import React from 'react';
 import '../App.css';
-import { Button } from './Button';
 import './Exporter.css';
 import {Link} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 
-
-function Exporter() {
+function Exporter(props) {
+    const location = useLocation();
+    var token = location.state.token;
+    console.log("token :  ->"+token)
+    
   return (
 
     <div className='hero-container'> 
