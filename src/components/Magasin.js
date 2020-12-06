@@ -24,15 +24,17 @@ function Magasin(props) {
     
     const postData = () => {
         fetch(' https://laravelapi.ouedsmar.com/public/api/magasin?token='+token, {
-            method:'POST',
-            headers: new Headers({
-                'Content-Type': 'application/x-www-form-urlencoded',
-            }),
-            body: "name="+name+"&detail="+detail+"&Phone="+Phone+"&email="+email+"&lat="+lat+"&lng="+lng
-        }); 
+            method: 'post',
+            body: "name="+name+"detail="+detail+"Phone="+Phone+"email="+email+"lat="+lat+"lng="+lng
+                }).then(function(response) {
+                    return response.json();
+                }).then(function() {
+            });
     }
-    
-        return (
+
+   
+            
+                return (
             <div className='hero-container'>
                 <video src='/videos/Office.mp4' autoPlay loop muted />
 
@@ -44,34 +46,34 @@ function Magasin(props) {
 
                         <div className='form-group'> 
                              <label htmlFor="name">Nom :</label>
-                             <input type="text" name="name" id="name" onChange={e => setName()} value={name}/>     
+                             <input type="text" name="name" id="name" onChange={Event => {setName(Event.target.value)}}/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="detail">Description detaillée du magasin :</label>
-                             <input type="text" name="detail"  id="detail" onChange={e => setDetail()} value={detail}/>     
+                             <input type="text" name="detail"  id="detail" onChange={Event => {setDetail(Event.target.value)}}/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="Phone">Numéro de téléphone :</label>
-                              <input type="text" name="Phone" id="Phone" onChange={e => setPhone()} value={Phone}/>     
+                              <input type="text" name="Phone" id="Phone" onPhone={Event => {setPhone(Event.target.value)}}/>     
                         </div> 
 
                         <div className='form-group'> 
                               <label htmlFor="email">Email :</label>
-                              <input type="text" name="email" id="email" onChange={e => setEmail()} value={email}/>     
+                              <input type="text" name="email" id="email" onEmail={Event => {setEmail(Event.target.value)}}/>     
                         </div>
 
                         <div id='map'></div> 
 
                         <div className='form-group'> 
                               <label htmlFor="lng"> longitude :</label>
-                              <input type="text" name="lng" id="lng" onChange={e => setLng()} value={lng}/>     
+                              <input type="text" name="lng" id="lng" onChange={Event => {setLng(Event.target.value)}}/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="lat">latitude :</label>
-                              <input type="text" name="lat" id="lat" onChange={e => setLat()} value={lat}/>     
+                              <input type="text" name="lat" id="lat" onChange={Event => {setLat(Event.target.value)}}/>     
                         </div>
 
                         <Link to='/Admin' className='nav-links'>

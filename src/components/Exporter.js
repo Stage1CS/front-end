@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../App.css';
 import './Exporter.css';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
-import reactHTMLTableToExcel from 'react-html-table-to-excel';
-import axios from 'axios';
+import * as FileSaver from 'file-saver';
+import * as XLSX from 'xlsx';
 
 
 function Exporter(props) {
@@ -46,7 +46,7 @@ function Exporter(props) {
       <h2>Vous voullez exporter les données à partir de quelle table ?</h2> 
 
       <Link to='/Admin' className='nav-links'>
-            <input type="submit" onClick={ExportDataM()} value="Exporter Magasins"/> 
+            <input type="submit" onClick={ () => ExportDataM()} value="Exporter Magasins"/> 
       </Link>
 
       <Link to='/Admin' className='nav-links'>
