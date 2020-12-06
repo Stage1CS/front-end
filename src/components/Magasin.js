@@ -11,28 +11,21 @@ function Magasin(props) {
     var token = location.state.token;
     console.log("magasin :  ->"+token);
 
-    const[name, setName] =useState("");
-    const[detail, setDetail] =useState("");
-    const[Phone, setPhone] =useState("");
-    const[email, setEmail] =useState("");
-    const[lat, setLat] =useState("");
-    const[lng, setLng] =useState("");
-
+    const[info, setInfo] =useState({name:"", detail:"", Phone:"", email:"", lng:"", lat:""});
     const submitHandler = e => {
                     e.preventDefault();
     }
     
     const postData = () => {
-        fetch(' https://laravelapi.ouedsmar.com/public/api/magasin?token='+token, {
-            method: 'post',
-            body: "name="+name+"detail="+detail+"Phone="+Phone+"email="+email+"lat="+lat+"lng="+lng
-                }).then(function(response) {
-                    return response.json();
-                }).then(function() {
-            });
-    }
-
-   
+        fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token, {
+            method:'POST',
+            headers: new Headers({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }),
+            body: "name="+info.name+"&detail="+info.detail+"&Phone="+info.Phone+"&email="+info.email+"&lng="+info.lng+"&lat="+info.lat
+        });
+        console.log("info"+ info)     
+    } 
             
                 return (
             <div className='hero-container'>
@@ -46,39 +39,39 @@ function Magasin(props) {
 
                         <div className='form-group'> 
                              <label htmlFor="name">Nom :</label>
-                             <input type="text" name="name" id="name" onChange={Event => {setName(Event.target.value)}}/>     
+                             <input type="text" name="name" id="name" onChange={e => setInfo({...info,name: e.target.value})} value={info.name}/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="detail">Description detaillée du magasin :</label>
-                             <input type="text" name="detail"  id="detail" onChange={Event => {setDetail(Event.target.value)}}/>     
+                             <input type="text" name="detail"  id="detail" onChange={e => setInfo({...info,detail: e.target.value})} value={info.detail}/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="Phone">Numéro de téléphone :</label>
-                              <input type="text" name="Phone" id="Phone" onPhone={Event => {setPhone(Event.target.value)}}/>     
+                              <input type="text" name="Phone" id="Phone" onChange={e => setInfo({...info,Phone: e.target.value})} value={info.Phone}/>     
                         </div> 
 
                         <div className='form-group'> 
                               <label htmlFor="email">Email :</label>
-                              <input type="text" name="email" id="email" onEmail={Event => {setEmail(Event.target.value)}}/>     
+                              <input type="text" name="email" id="email" onChange={e => setInfo({...info,email: e.target.value})} value={info.email}/>     
                         </div>
 
                         <div id='map'></div> 
 
                         <div className='form-group'> 
                               <label htmlFor="lng"> longitude :</label>
-                              <input type="text" name="lng" id="lng" onChange={Event => {setLng(Event.target.value)}}/>     
+                              <input type="text" name="lng" id="lng" onChange={e => setInfo({...info,lng: e.target.value})} value={info.lng}/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="lat">latitude :</label>
-                              <input type="text" name="lat" id="lat" onChange={Event => {setLat(Event.target.value)}}/>     
+                              <input type="text" name="lat" id="lat" onChange={e => setInfo({...info,lat: e.target.value})} value={info.lat}/>     
                         </div>
 
                         <Link to='/Admin' className='nav-links'>
                              <input type="submit" onClick={ () => postData()} value="Envoyer"/> 
-                         </Link>      
+                        </Link>      
 
                     </div>
                     </div>
