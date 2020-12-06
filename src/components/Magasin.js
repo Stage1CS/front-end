@@ -17,6 +17,7 @@ function Magasin(props) {
     }
     
     const postData = () => {
+        console.log(info)
         fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token, {
             method:'POST',
             headers: new Headers({
