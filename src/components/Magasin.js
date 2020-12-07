@@ -9,15 +9,11 @@ function Magasin(props) {
 
     const location = useLocation();
     var token = location.state.token;
-    console.log("magasin :  ->"+token);
 
     const[info, setInfo] =useState({name:"", detail:"", Phone:"", email:"", lng:"", lat:""});
-    const submitHandler = e => {
-                    e.preventDefault();
-    }
-    
+
     const postData = () => {
-        console.log(info)
+
         fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token, {
             method:'POST',
             headers: new Headers({
@@ -25,14 +21,15 @@ function Magasin(props) {
             }),
             body: "name="+info.name+"&detail="+info.detail+"&Phone="+info.Phone+"&email="+info.email+"&lng="+info.lng+"&lat="+info.lat
         });
-        console.log("info"+ info)     
+  
     } 
             
                 return (
+                    
             <div className='hero-container'>
                 <video src='/videos/Office.mp4' autoPlay loop muted />
 
-                <form onSubmit={submitHandler}>
+                <form onSubmit={postData()}>
                 <div className='haha'>
                     <div className='form-inner'> 
 
@@ -40,25 +37,25 @@ function Magasin(props) {
 
                         <div className='form-group'> 
                              <label htmlFor="name">Nom :</label>
-                             <input type="text" name="name" id="name" onChange={e => setInfo({...info,name: e.target.value})} value={info.name}/>     
+                             <input type="text"    name="name" id="name" onChange={e => setInfo({...info,name: e.target.value})} value={info.name} required/>     
                         </div>
 
                         <div className='form-group'> 
                               <label htmlFor="detail">Description detaillée du magasin :</label>
-                             <input type="text" name="detail"  id="detail" onChange={e => setInfo({...info,detail: e.target.value})} value={info.detail}/>     
+                             <input type="text" name="detail"  id="detail" onChange={e => setInfo({...info,detail: e.target.value})} value={info.detail} required/>     
                         </div>
 
                         <div className='form-group'> 
-                              <label htmlFor="Phone">Numéro de téléphone :</label>
-                              <input type="text" name="Phone" id="Phone" onChange={e => setInfo({...info,Phone: e.target.value})} value={info.Phone}/>     
+                              <label htmlFor="Phone">Numéro </label>
+                              <input type="tel" name="Phone" id="Phone" pattern="[0-9]*" onChange={e => setInfo({...info,Phone: e.target.value})} value={info.Phone} required/>     
                         </div> 
 
                         <div className='form-group'> 
                               <label htmlFor="email">Email :</label>
-                              <input type="text" name="email" id="email" onChange={e => setInfo({...info,email: e.target.value})} value={info.email}/>     
+                              <input type="text" name="email" id="email" pattern="^([0-9]{9})|([A-Za-z0-9._%\+\-]+@[a-z0-9.\-]+\.[a-z]{2,3})$" onChange={e => setInfo({...info,email: e.target.value})} value={info.email} required/>     
                         </div>
-
-                        <div id='map'></div> 
+                        <input id="showmap" type='button'  onClick={window.addMap} value="show map" />
+                        <div id='map' ></div> 
 
                         <div className='form-group'> 
                               <label htmlFor="lng"> longitude :</label>
@@ -70,8 +67,8 @@ function Magasin(props) {
                               <input type="text" name="lat" id="lat" onFocus={e => setInfo({...info,lat: e.target.value})} value={info.lat}/>     
                         </div>
 
-                        <Link to='/Admin' className='nav-links'>
-                             <input type="submit" onClick={ () => postData()} value="Envoyer"/> 
+                        <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
+                             <input type="submit" value="Envoyer"/> 
                         </Link>      
 
                     </div>

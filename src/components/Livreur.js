@@ -3,13 +3,12 @@ import '../App.css';
 import './Livreur.css';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
-import {useState , useEffect} from 'react';
+import {useState} from 'react';
 
 
 function Livreur() {
     const location = useLocation();
     var token = location.state.token;
-    console.log("token :  ->"+token);
 
     const[info, setInfo] =useState({nom:"", prénom:"", mail:"", num:""});
     const submitHandler = e => {
@@ -24,7 +23,7 @@ function Livreur() {
             }),
             body: "nom="+info.nom+"&prénom="+info.prénom+"&mail="+info.mail+"&num="+info.num
         });
-        console.log("info"+ info)     
+   
     }
 
 
@@ -58,7 +57,7 @@ function Livreur() {
           <input type="text" name="num" id="num" onChange={e => setInfo({...info,num: e.target.value})} value={info.num}/>     
       </div>
 
-      <Link to='/Admin' className='nav-links'>
+      <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
             <input type="submit" onClick={ () => postData()} value="Envoyer"/> 
       </Link>      
 

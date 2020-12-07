@@ -3,6 +3,7 @@ import react from 'react';
 
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useHistory}  from 'react-router'
 import './App.css';
 import Home from './components/pages/Home';
 import Connexion from './components/pages/Connexion';
@@ -18,7 +19,7 @@ import Export from './components/pages/Export';
 function App() {
   return (
     <>
-     <Router>
+     <Router history={useHistory}>
           <Route path='/' exact component={Home} />
           <Route path='/Connexion' exact component={Connexion} />
           <Route path='/Admin' exact component={Admin} />

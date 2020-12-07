@@ -10,7 +10,6 @@ function Rech_liv() {
 
   const location = useLocation();
   var token = location.state.token;
-  console.log("token ->"+token)
   const [data, setData] = useState([])
   const [rech, setRech] = useState('')
   
@@ -18,7 +17,6 @@ useEffect(() => {
     fetch('https://laravelapi.ouedsmar.com/public/api/livreur?token='+token)
       .then(response => response.json())
       .then(data => setData(data))},[]);
-      console.log(data);
 
   return (
 
@@ -33,7 +31,7 @@ useEffect(() => {
           <div className='form-group'> 
             <label htmlFor="name">Recherche :</label>
             <input type="text" name="rech" id="rech" placeholder="Recherche..." onChange={Event => {setRech(Event.target.value)}}/>     
-              <h2>
+              <div className="livreurs">
                 {data
                 .filter(val => {return  (val.nom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.prénom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.mail.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))  || (val.num.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) })
                 .map((val,key) => {
@@ -58,7 +56,7 @@ useEffect(() => {
                     </div>
                   }
                 )}
-              </h2>
+              </div>
           </div>
         </div>
 

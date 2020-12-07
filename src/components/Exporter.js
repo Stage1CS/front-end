@@ -3,92 +3,58 @@ import '../App.css';
 import './Exporter.css';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
-import ReactToExcel from "react-html-table-to-excel";
+import { CSVLink } from "react-csv";
+ 
 
 function Exporter(props) {
     const location = useLocation();
     var token = location.state.token;
     console.log("token :  ->"+token)
 
+   
+
     const [data, setData] = useState([])
-    
+    const [data2, setData2] = useState([])
+
+
   useEffect(() => {
       fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token)
         .then(response => response.json())
         .then(data => setData(data))},[]);
-        console.log(data);
 
-
-    const submitHandler = e => {
-      e.preventDefault();
-    }
-
-    const ExportDataM = () => {
-        fetch('https://laravelapi.ouedsmar.com/public/api/exportmagasin?token='+token, {
-        method:'GET',
-        headers: new Headers({
-          'Content-Type': 'application/x-www-form-urlencoded',
-          }),
-        });
-      }
-
-     const ExportDataL = () => {
-      fetch('https://laravelapi.ouedsmar.com/public/api/exportlivreur?token='+token, {
-        method:'GET',
-        headers: new Headers({
-          'Content-Type': 'application/x-www-form-urlencoded',
-          }),
-        });
-      }
-
+  useEffect(() => {
+      fetch('https://laravelapi.ouedsmar.com/public/api/livreur?token='+token)
+        .then(response => response.json())
+        .then(data2 => setData2(data2))},[]);
     
   return (
 
     <div className='hero-container'> 
     <video src='/videos/Office.mp4' autoPlay loop muted />    
 
-     <form onSubmit={submitHandler}>
+     <form>
       <div className='form-inner'>
 
-      <h2>Vous voullez exporter les données à partir de quelle table ? 
+      <h2>Vous voullez exporter les données à partir de quelle table ?</h2>
 
-      <table id="test">
-                <tr>
-                  <th>id</th>
-                  <th>name</th>
-                  <th>detail</th>
-                  <th>Phone</th>
-                  <th>email</th>
-                  <th>lat</th>
-                  <th>lng</th>
-                </tr>
-                <tr>
-                  <td>Jill</td>
-                  <td>Smith</td>
-                  <td>50</td>
-                  <td>Jill</td>
-                  <td>Smith</td>
-                  <td>50</td>
-                  <td>50</td>
-                </tr>
-        </table></h2>
+      <div>
 
+          <CSVLink data={data} filename={"Magasins.csv"}>
+                Exporter Magasins
+          </CSVLink>;
 
+      </div>
 
-      <Link to='/Admin' className='nav-links'>
-            <input type="submit" onClick={ () => ExportDataM()} value="Exporter Magasins"/> 
-      </Link>
+      <div>
 
-      <ReactToExcel
-          className="btn"
-          table="test"
-          filename="Livreurs"
-          sheet="sheet"
-          buttonText="Exporter Livreurs"
-      />  
+          <CSVLink data={data2} filename={"Livreurs.csv"}>
+                Exporter Livreurs
+          </CSVLink>;
 
-      <Link to='/Admin' className='nav-links'>
-            <input type="submit" onClick={ () => ExportDataL()}  value="Exporter Livreurs"/> 
+      </div>
+
+      <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
+            <input type="submit"  value="Exporter Livreurs"/> 
       </Link>        
 
      </div>
