@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './NavbarAdmin.css';
 
-function NavbarAdmin() {
+function NavbarAdmin(props) {
    const [click, setClick] = useState(false);
    const [button, setButton] = useState(true);
  
@@ -22,16 +22,16 @@ function NavbarAdmin() {
    }, []);
  
    window.addEventListener('resize', showButton);
- 
+
         return(
         <>
          <nav className="navbar">         
             <div className="navbar-container">
-            <Link to="/Admin" className="navbar-logo" onClick={closeMobileMenu}>       
+            <Link to={{pathname:"/Admin",state:{token:props.token}}} className="navbar-logo" onClick={closeMobileMenu}>       
             <i className="fas fa-truck-loading"></i>
             </Link>
 
-            <Link to="/Admin" className="navbar-logo" onClick={closeMobileMenu}>       
+            <Link to={{pathname:"/Admin",state:{token:props.token}}} className="navbar-logo" onClick={closeMobileMenu}>       
             Go Delivery
             </Link>
 
@@ -41,7 +41,7 @@ function NavbarAdmin() {
 
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                <li className='nav-item'>
-               <Link to='/Admin' className='nav-links' onClick={closeMobileMenu}>
+               <Link to={{pathname:"/Admin",state:{token:props.token}}} className='nav-links' onClick={closeMobileMenu}>
                   Acceuil
                </Link>
                </li>

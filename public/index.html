@@ -28,12 +28,12 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+      It will be replaced with the URL of the public folder during the build.
+      Only files inside the public folder can be referenced from the HTML.
 
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+      Learn how to configure a non-root public URL by running npm run build.
     -->
 
     <link rel="stylesheet" href="leaflet/leaflet.css" />
@@ -68,8 +68,9 @@
    
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="map" style="display: none;"></div>
+    
     <div id="root"></div>
+    <div id="map" style="display: none;"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -77,14 +78,16 @@
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      To begin the development, run npm start or yarn start.
+      To create a production bundle, use npm run build or yarn build.
     -->
     
   </body>
 
   <script>
-		String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+    function addMap(){
+      String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 		var lock=false;
 		var permahash=false;
@@ -104,14 +107,20 @@
 			map.touchZoom.enable();
 			map.doubleClickZoom.enable();
 			map.scrollWheelZoom.enable();
-
+      
 			map.on("contextmenu", function (event) {
-				console.log(event.latlng.toString())
-				document.querySelector('#lat').value = event.latlng.toString().split('(')[1].split(',')[0];
-				document.querySelector('#lng').value = event.latlng.toString().split('(')[1].split(',')[1].split(')')[0].trim();
-					L.marker(event.latlng).addTo(map);
+        console.log(event.latlng.toString())
+        
+        document.getElementById('lat').value = event.latlng.toString().split('(')[1].split(',')[0];
+        document.getElementById('lat').focus();      
+        document.getElementById('lng').value = event.latlng.toString().split('(')[1].split(',')[1].split(')')[0].trim();
+        document.getElementById('lng').focus();
+					/*L.marker(event.latlng).addTo(map);*/
 				});
 
-    	map.addControl(new L.Control.Scale({width: 200, position: 'bottomleft', imperial: false}));
+      map.addControl(new L.Control.Scale({width: 200, position: 'bottomleft', imperial: false}));
+      document.getElementById('showmap').style.display = "none"; 
+    }
+    var mapadding = 'addMap';
 	</script>
 </html>

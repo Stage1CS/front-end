@@ -11,12 +11,11 @@ function Admin() {
   var token='none'
   try{ token = location.state.token;}
   catch{
-
   }
     return (           
         <>
             <p>{token}</p>
-           <NavbarAdmin />
+           <NavbarAdmin token={token}/>
            <AcceuilAdmin token={token}/>
         </>    
            

@@ -5,11 +5,12 @@ import Cards from '../Cards';
 import Navbar from '../Navbar';
 
 
-function Home() {
+function Home(props) {
+
   return (
     <>
-      <Navbar/>
-      <HeroSection />
+      <Navbar token={props.token}/>
+      <HeroSection token={props.token}/>
       <Cards />
     </>
   );

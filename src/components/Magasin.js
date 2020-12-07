@@ -1,75 +1,75 @@
 import React from 'react';
-import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import {Link} from 'react-router-dom';
 import './Magasin.css';
+import {useLocation} from 'react-router-dom';
+import {useState} from 'react';
 
-class Magasin extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            markers: [[36.719719, 3.184080]],
-        };
-    }
+function Magasin(props) {
 
-    addMarker = (e) => {
-        const { markers } = this.state;
-        markers.pop();
-        markers.push(e.latlng);
-        this.setState({ markers });
-        
-    }
-    
+    const location = useLocation();
+    var token = location.state.token;
 
-    render() {
-        let DefaultIcon = L.icon({
-            iconUrl: icon,
-            shadowUrl: iconShadow
+    const[info, setInfo] =useState({name:"", detail:"", Phone:"", email:"", lng:"", lat:""});
+
+    const postData = () => {
+
+        fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token, {
+            method:'POST',
+            headers: new Headers({
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }),
+            body: "name="+info.name+"&detail="+info.detail+"&Phone="+info.Phone+"&email="+info.email+"&lng="+info.lng+"&lat="+info.lat
         });
-        L.Marker.prototype.options.icon = DefaultIcon;
-
-        return (
+  
+    } 
+            
+                return (
+                    
             <div className='hero-container'>
                 <video src='/videos/Office.mp4' autoPlay loop muted />
-                <form>
+
+                <form onSubmit={postData()}>
                 <div className='haha'>
                     <div className='form-inner'> 
 
                         <h2>Veuillez remplir les informations sur le point à ajouter </h2>        
 
                         <div className='form-group'> 
-                             <label htmlFor="nom magasin">Nom :</label>
-                             <input type="text" name="nom magasin" id="nom magasin" />     
-                        </div>
-
-                         <div className='form-group'> 
-                              <label htmlFor="email_proprietaire">Email :</label>
-                             <input type="email" name="email_proprietaire"  id="email_proprietaire" />     
-                         </div>
-
-                         <div className='form-group'> 
-                              <label htmlFor="">Numéro de téléphone :</label>
-                              <input type="text" name="" id="" />     
-                         </div> 
-
-            <div id='map'>            
-                
-            </div> 
-                      <div className='form-group'> 
-                              <label htmlFor=""> longitude :</label>
-                              <input type="text" name="lng" id="lng" />     
+                             <label htmlFor="name">Nom :</label>
+                             <input type="text"    name="name" id="name" onChange={e => setInfo({...info,name: e.target.value})} value={info.name} required/>     
                         </div>
 
                         <div className='form-group'> 
-                              <label htmlFor="">latitude :</label>
-                              <input type="text" name="lat" id="lat" />     
+                              <label htmlFor="detail">Description detaillée du magasin :</label>
+                             <input type="text" name="detail"  id="detail" onChange={e => setInfo({...info,detail: e.target.value})} value={info.detail} required/>     
                         </div>
 
-                        <Link to='/Admin' className='nav-links'>
+                        <div className='form-group'> 
+                              <label htmlFor="Phone">Numéro </label>
+                              <input type="tel" name="Phone" id="Phone" pattern="[0-9]*" onChange={e => setInfo({...info,Phone: e.target.value})} value={info.Phone} required/>     
+                        </div> 
+
+                        <div className='form-group'> 
+                              <label htmlFor="email">Email :</label>
+                              <input type="text" name="email" id="email" pattern="^([0-9]{9})|([A-Za-z0-9._%\+\-]+@[a-z0-9.\-]+\.[a-z]{2,3})$" onChange={e => setInfo({...info,email: e.target.value})} value={info.email} required/>     
+                        </div>
+                        <input id="showmap" type='button'  onClick={window.addMap} value="show map" />
+                        <div id='map' ></div> 
+
+                        <div className='form-group'> 
+                              <label htmlFor="lng"> longitude :</label>
+                              <input type="text" name="lng" id="lng" onFocus={e => setInfo({...info,lng: e.target.value})} value={info.lng}/>     
+                        </div>
+
+                        <div className='form-group'> 
+                              <label htmlFor="lat">latitude :</label>
+                              <input type="text" name="lat" id="lat" onFocus={e => setInfo({...info,lat: e.target.value})} value={info.lat}/>     
+                        </div>
+
+                        <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
                              <input type="submit" value="Envoyer"/> 
-                         </Link>      
+                    </Link>      
 
                     </div>
                     </div>
@@ -77,6 +77,5 @@ class Magasin extends React.Component {
             </div>
         );
     }
-}
 
 export default Magasin;
