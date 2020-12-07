@@ -6,7 +6,7 @@ import './CardsAdmin.css'
 import CardItemAdmin from './CardItemAdmin';
 
 function AcceuilAdmin(props) {
-  console.log(props.token)
+
   return (
     
     <div className='hero-container'>

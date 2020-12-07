@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function CardItemAdmin(props) {
-  console.log(props)
+
   return (
     <>
       <li className='cards__item__admin'>

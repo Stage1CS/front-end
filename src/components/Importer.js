@@ -7,7 +7,6 @@ import {useLocation} from 'react-router-dom';
 function Importer() {
   const location = useLocation();
   var token = location.state.token;
-  console.log("token :  ->"+token)
 
   return (
 

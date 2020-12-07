@@ -15,7 +15,7 @@ function Admin() {
     return (           
         <>
             <p>{token}</p>
-           <NavbarAdmin />
+           <NavbarAdmin token={token}/>
            <AcceuilAdmin token={token}/>
         </>    
            

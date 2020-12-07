@@ -9,7 +9,7 @@ function Rech_mag() {
 
   const location = useLocation();
   var token = location.state.token;
-  console.log("token ->"+token)
+
   const [data, setData] = useState([])
   const [rech, setRech] = useState('')
   
@@ -17,7 +17,6 @@ useEffect(() => {
     fetch('https://laravelapi.ouedsmar.com/public/api/magasin?token='+token)
       .then(response => response.json())
       .then(data => setData(data))},[]);
-      console.log(data);
      
   return (
 

@@ -9,7 +9,6 @@ import {useState , useEffect} from 'react';
 function Livreur() {
     const location = useLocation();
     var token = location.state.token;
-    console.log("token :  ->"+token);
 
     const[info, setInfo] =useState({nom:"", prénom:"", mail:"", num:""});
     const submitHandler = e => {
@@ -24,7 +23,7 @@ function Livreur() {
             }),
             body: "nom="+info.nom+"&prénom="+info.prénom+"&mail="+info.mail+"&num="+info.num
         });
-        console.log("info"+ info)     
+   
     }
 
 

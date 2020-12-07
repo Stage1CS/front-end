@@ -85,7 +85,9 @@
   </body>
 
   <script>
-		String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+    function addMap(){
+      String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 		var lock=false;
 		var permahash=false;
@@ -105,7 +107,7 @@
 			map.touchZoom.enable();
 			map.doubleClickZoom.enable();
 			map.scrollWheelZoom.enable();
-
+      
 			map.on("contextmenu", function (event) {
         console.log(event.latlng.toString())
         
@@ -116,6 +118,9 @@
 					/*L.marker(event.latlng).addTo(map);*/
 				});
 
-    	map.addControl(new L.Control.Scale({width: 200, position: 'bottomleft', imperial: false}));
+      map.addControl(new L.Control.Scale({width: 200, position: 'bottomleft', imperial: false}));
+      document.getElementById('showmap').style.display = "none"; 
+    }
+    var mapadding = 'addMap';
 	</script>
 </html>
