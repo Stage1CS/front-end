@@ -69,7 +69,7 @@ function Magasin(props) {
 
                         <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
                              <input type="submit" value="Envoyer"/> 
-                    </Link>      
+                        </Link>      
 
                     </div>
                     </div>

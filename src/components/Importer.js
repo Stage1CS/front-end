@@ -21,13 +21,13 @@ function Importer() {
       <input type="file" id="file" name="file" multiple></input>
 
       <div className='hohoho'>
-        <Link to='/Admin' className='nav-links'>
+        <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
               <input type="submit" value="Importer Magasins"/> 
         </Link>      
       </div>
 
       <div className='hohoho'>
-        <Link to='/Admin' className='nav-links'>
+        <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
               <input type="submit" value="Importer Livreurs"/> 
         </Link>      
       </div>
