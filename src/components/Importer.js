@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import { Button } from './Button';
 import './Importer.css';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
@@ -19,19 +18,19 @@ function Importer() {
 
       <h2>Vous voullez importer les données vers quelle table ?</h2> 
 
-      <select name=''> 
-          <option value='Séléctionner'>Séléctionner</option>
-          <option value='Livreur'>Livreur</option>
-          <option value='Magasin'>Magasin</option>      
-      </select>
-
       <label for="file">Sélectionner le fichier à envoyer</label>
       <input type="file" id="file" name="file" multiple></input>
 
       <div className='hohoho'>
-      <Link to='/Admin' className='nav-links'>
-            <input type="submit" value="Importer"/> 
-      </Link>      
+        <Link to='/Admin' className='nav-links'>
+              <input type="submit" value="Importer Magasins"/> 
+        </Link>      
+      </div>
+
+      <div className='hohoho'>
+        <Link to='/Admin' className='nav-links'>
+              <input type="submit" value="Importer Livreurs"/> 
+        </Link>      
       </div>
       
      </div>

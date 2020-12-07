@@ -107,10 +107,13 @@
 			map.scrollWheelZoom.enable();
 
 			map.on("contextmenu", function (event) {
-				console.log(event.latlng.toString())
-				document.querySelector('#lat').value = event.latlng.toString().split('(')[1].split(',')[0];
-				document.querySelector('#lng').value = event.latlng.toString().split('(')[1].split(',')[1].split(')')[0].trim();
-					L.marker(event.latlng).addTo(map);
+        console.log(event.latlng.toString())
+        
+        document.getElementById('lat').value = event.latlng.toString().split('(')[1].split(',')[0];
+        document.getElementById('lat').focus();      
+        document.getElementById('lng').value = event.latlng.toString().split('(')[1].split(',')[1].split(')')[0].trim();
+        document.getElementById('lng').focus();
+					/*L.marker(event.latlng).addTo(map);*/
 				});
 
     	map.addControl(new L.Control.Scale({width: 200, position: 'bottomleft', imperial: false}));

@@ -12,7 +12,7 @@ function CardItemRech(props) {
                   <Link to='/Admin'>
                         <input className='nav-links' type="submit" value="Modifier"/> 
                   </Link>
-                  <Link to='/Export'>
+                  <Link to='/Admin'>
                         <input className='nav-links' type="submit" value="Supprimer"/> 
                   </Link> 
             </div>
