@@ -35,7 +35,7 @@ function Update_liv(props) {
      <form onSubmit={submitHandler}>
       <div className='form-inner'>
 
-      <h2>Veuillez remplir les informations de votre livreur</h2> 
+      <h2>Veuillez remplir les champs à modifier</h2> 
 
       <div className='form-group'> 
           <label htmlFor="name">Nom :</label>
@@ -58,7 +58,7 @@ function Update_liv(props) {
       </div>
 
       <Link to={{pathname:"/Admin",state:{token:props.token}}} className='nav-links'>
-            <input type="submit" onClick={ () => ChangeData()} value="Envoyer"/> 
+            <input type="submit" onClick={ () => ChangeData()} value="Modifier"/> 
       </Link>      
 
      </div>
