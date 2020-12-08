@@ -6,6 +6,50 @@ video {
     z-index: -1;
   }
   
+* {
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+form {
+  display: block;
+  position: absolute;
+  margin-top: 30%;
+  margin-bottom: 15%;
+  margin-left: 20%;
+  width: 70%;
+}
+
+form .form-inner {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  width: inherit;
+  z-index: 2;
+}
+
+form:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 71%;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: 1;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom right, #ff7b00, #FF7B00);
+}
+
+form .form-inner .form-group{
+  display: block;
+  width: 300px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+  
   .hero-container__livreur {
     /*background-color: rgb(247, 218, 191);*/
     height: 100vh;

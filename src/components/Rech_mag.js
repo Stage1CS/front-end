@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 import './Rech_mag.css';
+import './CardsAdmin.css';
+import CardItemRech from './CardItemRech';
 import {useState , useEffect} from 'react';
 import {useLocation} from 'react-router-dom'
 
@@ -38,7 +40,26 @@ useEffect(() => {
                 {data
                 .filter(val => {return  (val.name.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.detail.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.email.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))  || (val.Phone.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) })
                 .map((val) => {
-                  return<div className='form-inner'><p>{val.name} {val.detail} {val.email} {val.Phone}</p></div>
+                  return<div className='form-inner-haha'>
+
+                  <div className='cards__container'>
+                    <div className='cards__wrapper'>
+                      <ul className='cards__items'>
+
+                      <CardItemRech
+                        src='../public/images/delivery-man.png'
+                        text1={val.name} 
+                        text2={val.detail}
+                        text3={val.Phone}
+                        path='/Recherche_mag'
+                        token={token}
+                      />           
+                      </ul>
+                    </div>
+                  </div>                    
+              
+              </div>
+                  
                 }
                 )}
 

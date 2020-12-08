@@ -35,7 +35,7 @@ useEffect(() => {
                 {data
                 .filter(val => {return  (val.nom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.prénom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.mail.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))  || (val.num.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) })
                 .map((val,key) => {
-                  return<div className='form-inner'>
+                  return<div className='form-inner-haha'>
 
                         <div className='cards__container'>
                           <div className='cards__wrapper'>
