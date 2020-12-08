@@ -29,7 +29,7 @@ function Exporter(props) {
     
   return (
 
-    <div className='hero-container'> 
+    <div className='hero-container__livreur'> 
     <video src='/videos/Office.mp4' autoPlay loop muted />    
 
      <form>
