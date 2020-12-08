@@ -47,7 +47,8 @@ useEffect(() => {
                               text1={val.nom} 
                               text2={val.prénom}
                               text3={val.mail}
-                              text4={val.id_livreur}
+                              text4={val.num}
+                              text5={val.id_livreur}
                               path='/Recherche_liv'
                               token={token}
                             />           
