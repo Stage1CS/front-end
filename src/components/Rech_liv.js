@@ -8,7 +8,7 @@ import {useLocation} from 'react-router-dom';
 
 function Rech_liv() {
 
-  const location = useLocation();
+  const location = useLocation(); 
   var token = location.state.token;
   const [data, setData] = useState([])
   const [rech, setRech] = useState('')
@@ -16,7 +16,8 @@ function Rech_liv() {
 useEffect(() => {
     fetch('https://laravelapi.ouedsmar.com/public/api/livreur?token='+token)
       .then(response => response.json())
-      .then(data => setData(data))},[]);
+      .then(data => setData(data))});
+      console.log(data);
 
   return (
 
@@ -35,7 +36,7 @@ useEffect(() => {
                 {data
                 .filter(val => {return  (val.nom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.prénom.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) || (val.mail.toLocaleLowerCase().includes(rech.toLocaleLowerCase()))  || (val.num.toLocaleLowerCase().includes(rech.toLocaleLowerCase())) })
                 .map((val,key) => {
-                  return<div className='form-inner'>
+                  return<div className='form-inner-haha'>
 
                         <div className='cards__container'>
                           <div className='cards__wrapper'>
@@ -46,6 +47,7 @@ useEffect(() => {
                               text1={val.nom} 
                               text2={val.prénom}
                               text3={val.mail}
+                              text4={val.id_livreur}
                               path='/Recherche_liv'
                               token={token}
                             />           

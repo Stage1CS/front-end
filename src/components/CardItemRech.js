@@ -7,6 +7,18 @@ function CardItemRech(props) {
     const location = useLocation();
     var token = location.state.token;
     console.log("token :  ->"+token)
+
+    function delete_liv(){
+      const requestOptions = {
+          method: 'DELETE'
+        };
+      
+        fetch("https://laravelapi.ouedsmar.com/public/api/livreur/" + props.text4+"?token="+token, requestOptions).then((response) => {
+          return response.json();
+        }).then((result) => {
+        });
+        }
+
   return (
     <>
       <li className='cards__item'>
@@ -18,7 +30,7 @@ function CardItemRech(props) {
                         <input className='nav-links' type="submit" value="Modifier"/> 
                   </Link>
                   <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
-                        <input className='nav-links' type="submit" value="Supprimer"/> 
+                        <input className='nav-links' onClick={delete_liv} type="submit" value="Supprimer"/> 
                   </Link> 
             </div>
           </div>
