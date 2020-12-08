@@ -6,25 +6,24 @@ video {
     z-index: -1;
   }
   
-  .hero-container {
-    /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
+  .hero-container__livreur {
+    /*background-color: rgb(247, 218, 191);*/
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     object-fit: contain;
   }
   
-  .hero-container > h1 {
+  .hero-container__livreur > h1 {
     color: #fff;
     font-size: 100px;
     margin-top: -100px;
   }
   
-  .hero-container > p {
+  .hero-container__livreur > p {
     margin-top: 8px;
     color: #fff;
     font-size: 32px;
@@ -32,48 +31,48 @@ video {
       'Lucida Sans', Arial, sans-serif;
   }
   
-  .hero-btns {
+  .hero-btns__livreur {
     margin-top: 32px;
   }
   
-  .hero-btns .btn {
+  .hero-btns__livreur .btn {
     margin: 6px;
   }
   
-  .fa-play-circle {
+  .fa-play-circle__livreur {
     margin-left: 4px;
   }
   
   @media screen and (max-width: 960px) {
-    .hero-container > h1 {
+    .hero-container__livreur > h1 {
       font-size: 70px;
       margin-top: -150px;
     }
   }
   
   @media screen and (max-width: 768px) {
-    .hero-container > h1 {
+    .hero-container__livreur > h1 {
       font-size: 50px;
       margin-top: -100px;
     }
   
-    .hero-container > p {
+    .hero-container__livreur > p {
       font-size: 30px;
     }
   
-    .btn-mobile {
+    .btn-mobile__livreur {
       display: block;
       text-decoration: none;
     }
   
-    .btn {
+    .btn__livreur {
       width: 100%;
     }
   }
 
   h3 {
     text-align: center;
-    color:rgb(255, 255, 255);
+    color:rgb(243, 124, 12);
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 30px;
