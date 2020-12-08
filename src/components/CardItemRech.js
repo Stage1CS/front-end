@@ -14,7 +14,7 @@ function CardItemRech(props) {
           <div className='cards__item__info'>
             <h5 className='cards__item__text'>{props.text1} {props.text2} {props.text3}</h5>
             <div>
-                  <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
+                  <Link to={{pathname:"/Modifier_liv",state:{token:token}}} className='nav-links'>
                         <input className='nav-links' type="submit" value="Modifier"/> 
                   </Link>
                   <Link to={{pathname:"/Admin",state:{token:token}}} className='nav-links'>
