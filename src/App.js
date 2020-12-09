@@ -15,6 +15,8 @@ import Ajout_Magasin from './components/pages/Ajout_Magasin';
 import Import from './components/pages/Import';
 import Export from './components/pages/Export';
 import UpdateLiv from './components/pages/UpdateLiv';
+import UpdateMag from './components/pages/UpdateMag';
+
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
           <Route path='/Import' exact component={Import} />
           <Route path='/Export' exact component={Export} />
           <Route path='/UpdateLiv' exact component={UpdateLiv} />
+          <Route path='/UpdateMag' exact component={UpdateMag} />
      </Router>
     </>
   );

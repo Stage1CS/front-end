@@ -36,7 +36,7 @@
     display: flex;
     flex-flow: column;
     width: 100%;
-    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    box-shadow: 0 6px 20px rgba(114, 91, 60, 0.17);
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     border-radius: 10px;
@@ -55,9 +55,7 @@
     animation-name: fade-img;
     animation-duration: 2s;
   }
-  
- 
-  
+
   .cards__item__img {
     position: absolute;
     top: 0;
@@ -77,11 +75,9 @@
     transform: scale(1.1);
   }
   
-  .mag {
-    width: 300px;
-  }
   .cards__item__info {
     padding: 20px 30px 30px;
+    width: 20vw;
   }
   
   .cards__item__text {
@@ -106,4 +102,8 @@
     .cards__item {
       margin-bottom: 2rem;
     }
+  }
+
+  .k {
+     align-items: center;
   }

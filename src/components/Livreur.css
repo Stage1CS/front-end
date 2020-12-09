@@ -33,7 +33,6 @@ form:after {
   content: '';
   display: block;
   position: absolute;
-  width: 71%;
   top: -5px;
   left: -5px;
   right: -5px;
