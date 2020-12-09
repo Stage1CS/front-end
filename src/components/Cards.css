@@ -77,6 +77,9 @@
     transform: scale(1.1);
   }
   
+  .mag {
+    width: 300px;
+  }
   .cards__item__info {
     padding: 20px 30px 30px;
   }
