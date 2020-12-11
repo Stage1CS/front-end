@@ -18,14 +18,14 @@ function AcceuilAdmin(props) {
           <ul className='cards__items'>
 
           <CardItemAdmin
-              src='images/loupe.jpg'
+              src='images/rech_liv.PNG'
               text='Rechercher livreur'
               path='/Recherche_liv'
               token={props.token}
 
             />
             <CardItemAdmin
-              src='images/loupe.jpg'
+              src='images/rech_mag.PNG'
               text='Rechercher magasin'
               path='/Recherche_mag'
               token={props.token}
