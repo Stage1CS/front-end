@@ -4,7 +4,7 @@ import './Rech_mag.css';
 import './CardsAdmin.css';
 import CardItemMag from './CardItemMag';
 import {useState , useEffect} from 'react';
-import {useLocation} from 'react-router-dom'
+import {useLocation} from 'react-router-dom';
 
 
 function Rech_mag(props) {
@@ -56,6 +56,7 @@ useEffect(() => {
                         text5={val.id}
                         input={<input id="showmap" type='button'  onClick={window.addMap} value="show map" />}
                         map={<div id='map'/>}
+
                         path='/Recherche_mag'
                         token={props.token}
                       />           

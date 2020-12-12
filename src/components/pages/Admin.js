@@ -14,7 +14,6 @@ function Admin() {
   }
     return (           
         <>
-            <p>{token}</p>
            <NavbarAdmin token={token}/>
            <AcceuilAdmin token={token}/>
         </>    
